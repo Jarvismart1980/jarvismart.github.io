@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>James 每日產業情報 - 2026-03-19</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0b0c10; color: #c5c6d0; }
+    .gradient-bg { background: linear-gradient(135deg, #0b0c10 0%, #1a1a2e 100%); }
+    .card { background: linear-gradient(145deg, #1f1f2e 0%, #16161f 100%); border: 1px solid #2d2d3a; }
+    .card-hover:hover { border-color: #4f46e5; transform: translateY(-2px); transition: all 0.3s ease; }
+    .badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+    .badge-high { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .badge-med { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-low { background: rgba(75, 85, 99, 0.3); color: #9ca3af; border: 1px solid rgba(75, 85, 99, 0.5); }
+    .badge-opportunity { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-watch { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+    .tag-ai { background: #312e81; color: #a5b4fc; }
+    .tag-cooling { background: #1e3a5f; color: #7dd3fc; }
+    .tag-cpo { background: #4a1d45; color: #f0abfc; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .importance-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    .importance-high { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+    .delta-box { border-left: 3px solid; padding-left: 12px; }
+    .delta-positive { border-color: #10b981; }
+    .delta-neutral { border-color: #f59e0b; }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen p-4 md:p-6 lg:p-8">
+  <div class="max-w-5xl mx-auto">
+    
+    <header class="mb-8">
+      <a href="../index.html" class="text-indigo-400 hover:text-indigo-300 mb-4 inline-block">← 返回首頁</a>
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+        <div>
+          <span class="text-xs text-gray-500 uppercase tracking-widest">James 每日產業情報</span>
+          <h1 class="text-2xl md:text-3xl font-bold text-white mt-1">GTC 2026 持續發酵</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="badge badge-high">獨家</span>
+          <span class="text-sm text-gray-400">2026.03.19</span>
+        </div>
+      </div>
+      
+      <div class="card rounded-2xl p-6 border-l-4 border-l-indigo-500 mb-6">
+        <div class="flex items-start gap-3">
+          <div class="text-2xl">💡</div>
+          <div>
+            <h3 class="text-white font-semibold mb-2">今日一句結論</h3>
+            <p class="text-gray-300 leading-relaxed">
+              <span class="text-indigo-400 font-semibold">NVIDIA 液冷供應商名單公佈</span> — AVC、酷碼、Jentech、Delta 入列。Feynman 架構將全面採用<span class="text-purple-400 font-semibold">硅光子</span>，對 Delta 散熱事業既是機會也是挑戰。
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="card rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-white">4</div>
+        <div class="text-xs text-gray-500 uppercase">液冷供應商</div>
+      </div>
+      <div class="card rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-green-400">45°C</div>
+        <div class="text-xs text-gray-500 uppercase">熱水冷卻</div>
+      </div>
+      <div class="card rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-purple-400">14x</div>
+        <div class="text-xs text-gray-500 uppercase">Feynman 效能</div>
+      </div>
+      <div class="card rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-indigo-400">1,450</div>
+        <div class="text-xs text-gray-500 uppercase">台達電股價</div>
+      </div>
+    </div>
+
+    <!-- Top 3 -->
+    <section class="mb-10">
+      <div class="section-header">
+        <div class="section-icon bg-red-900/30 text-red-400">🔥</div>
+        <h2 class="text-xl font-bold text-white">今日最重要 3 件事</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="card card-hover rounded-xl p-6 delta-box delta-positive">
+          <div class="flex items-center justify-between mb-4"><span class="tag tag-cooling">供應商</span></div>
+          <h3 class="text-lg font-bold text-white mb-2">液冷供應商名單公佈</h3>
+          <p class="text-sm text-gray-400 mb-4">NVIDIA 公布 Vera Rubin 冷板供應商：AVC、酷碼、Jentech、Delta Electronics</p>
+          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-green-400 font-medium">✅ Delta 入列！直接受惠</p></div>
+        </div>
+
+        <div class="card card-hover rounded-xl p-6 delta-box delta-positive">
+          <div class="flex items-center justify-between mb-4"><span class="tag tag-cpo">CPO</span></div>
+          <h3 class="text-lg font-bold text-white mb-2">Feynman 全面採用硅光子</h3>
+          <p class="text-sm text-gray-400 mb-4">2027-2028 年量產，將以硅光子取代銅線互連，預計效能提升 14 倍</p>
+          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-yellow-400 font-medium">⚠️ 需提前布局光學散熱</p></div>
+        </div>
+
+        <div class="card card-hover rounded-xl p-6 delta-box delta-positive">
+          <div class="flex items-center justify-between mb-4"><span class="tag tag-ai">液冷</span></div>
+          <h3 class="text-lg font-bold text-white mb-2">45°C 熱水冷卻成標準</h3>
+          <p class="text-sm text-gray-400 mb-4">Vera Rubin 採用 45°C 熱水設施冷卻，改變散熱系統設計</p>
+          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-green-400 font-medium">✅ 新技術標準建立中</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NVIDIA Roadmap -->
+    <section class="mb-10">
+      <div class="section-header">
+        <div class="section-icon bg-indigo-900/30 text-indigo-400">🟦</div>
+        <h2 class="text-xl font-bold text-white">NVIDIA 液冷 / 光學路線圖</h2>
+      </div>
+      
+      <div class="card rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-800/50">
+              <tr>
+                <th class="text-left p-4 text-gray-400 font-medium">項目</th>
+                <th class="text-left p-4 text-gray-400 font-medium">時間</th>
+                <th class="text-left p-4 text-gray-400 font-medium">內容</th>
+                <th class="text-left p-4 text-gray-400 font-medium">Delta 意義</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800">
+              <tr>
+                <td class="p-4"><span class="text-white font-medium">Vera Rubin 冷板</span></td>
+                <td class="p-4 text-gray-300">2026H2</td>
+                <td class="p-4 text-gray-300">4 家供應商入列</td>
+                <td class="p-4"><span class="badge badge-opportunity">✅ 機會</span></td>
+              </tr>
+              <tr>
+                <td class="p-4"><span class="text-white font-medium">45°C 熱水冷卻</span></td>
+                <td class="p-4 text-gray-300">2026H2</td>
+                <td class="p-4 text-gray-300">warm water facility</td>
+                <td class="p-4"><span class="badge badge-opportunity">✅ 機會</span></td>
+              </tr>
+              <tr>
+                <td class="p-4"><span class="text-white font-medium">Feynman 硅光子</span></td>
+                <td class="p-4 text-gray-300">2027-2028</td>
+                <td class="p-4 text-gray-300">14x 效能，取代銅線</td>
+                <td class="p-4"><span class="badge badge-watch">⚠️ 挑戰</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 客戶 & 供應商 -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <section>
+        <div class="section-header">
+          <div class="section-icon bg-blue-900/30 text-blue-400">🏢</div>
+          <h2 class="text-xl font-bold text-white">客戶 / 生態系</h2>
+        </div>
+        <div class="space-y-3">
+          <div class="card rounded-lg p-4">
+            <div class="flex justify-between mb-2"><span class="text-white font-medium">Liteon</span><span class="badge badge-high">新</span></div>
+            <p class="text-sm text-gray-400">展出 800V 功率 Rack + 2.1MW CDU</p>
+          </div>
+          <div class="card rounded-lg p-4">
+            <div class="flex justify-between mb-2"><span class="text-white font-medium">ASRock Rack</span><span class="badge badge-med">新</span></div>
+            <p class="text-sm text-gray-400">液冷 AI 平台支援 Vera Rubin</p>
+          </div>
+          <div class="card rounded-lg p-4">
+            <div class="flex justify-between mb-2"><span class="text-white font-medium">JetCool + Broadcom</span><span class="badge badge-med">新</span></div>
+            <p class="text-sm text-gray-400">單相直接晶片冷卻方案</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <div class="section-icon bg-green-900/30 text-green-400">✅</div>
+          <h2 class="text-xl font-bold text-white">入選供應商</h2>
+        </div>
+        <div class="space-y-3">
+          <div class="card rounded-lg p-4 delta-box delta-positive">
+            <div class="flex justify-between mb-2"><span class="text-white font-medium">Delta (台達電)</span><span class="badge badge-opportunity">✅</span></div>
+            <p class="text-sm text-gray-400">Vera Rubin 冷板供應商</p>
+          </div>
+          <div class="card rounded-lg p-4 delta-box delta-positive">
+            <div class="flex justify-between mb-2"><span class="text-white font-medium">AVC (亞光)</span><span class="badge badge-opportunity">✅</span></div>
+            <p class="text-sm text-gray-400">Vera Rubin 冷板供應商</p>
+          </div>
+          <div class="card rounded-lg p-4 delta-box delta-positive">
+            <div class="flex justify-between mb-2"><span class="text-white font-medium">Jentech (謄華)</span><span class="badge badge-opportunity">✅</span></div>
+            <p class="text-sm text-gray-400">Vera Rubin 冷板供應商</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 圖表 -->
+    <section class="mb-10">
+      <div class="section-header">
+        <div class="section-icon bg-purple-900/30 text-purple-400">📊</div>
+        <h2 class="text-xl font-bold text-white">主題熱度</h2>
+      </div>
+      <div class="card rounded-xl p-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="bg-red-900/20 rounded-lg p-4 border border-red-800/30"><div class="flex justify-between mb-2"><span class="text-white font-medium">Vera Rubin</span><span class="text-red-400 text-xs">🔥極熱</span></div></div>
+          <div class="bg-red-900/20 rounded-lg p-4 border border-red-800/30"><div class="flex justify-between mb-2"><span class="text-white font-medium">液冷供應商</span><span class="text-red-400 text-xs">🔥極熱</span></div></div>
+          <div class="bg-orange-900/20 rounded-lg p-4 border border-orange-800/30"><div class="flex justify-between mb-2"><span class="text-white font-medium">硅光子</span><span class="text-orange-400 text-xs">🔥熱</span></div></div>
+          <div class="bg-orange-900/20 rounded-lg p-4 border border-orange-800/30"><div class="flex justify-between mb-2"><span class="text-white font-medium">45°C 熱水</span><span class="text-orange-400 text-xs">🔥熱</span></div></div>
+          <div class="bg-yellow-900/20 rounded-lg p-4 border border-yellow-800/30"><div class="flex justify-between mb-2"><span class="text-gray-400 font-medium">Feynman</span><span class="text-yellow-400 text-xs">溫</span></div></div>
+          <div class="bg-gray-800/30 rounded-lg p-4 border border-gray-700"><div class="flex justify-between mb-2"><span class="text-gray-400 font-medium">競爭對手</span><span class="text-gray-500 text-xs">平</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delta 意義 -->
+    <section class="mb-10">
+      <div class="section-header">
+        <div class="section-icon bg-green-900/30 text-green-400">🎯</div>
+        <h2 class="text-xl font-bold text-white">對 Delta / TMSBU 的意義</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="card rounded-xl p-5 border-t-4 border-t-green-500">
+          <h3 class="text-green-400 font-semibold mb-4">⚡ 短期機會</h3>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li>• 入選 Vera Rubin 供應商</li>
+            <li>• 45°C 液冷系統需求</li>
+            <li>• CDU 散熱模組</li>
+          </ul>
+        </div>
+        <div class="card rounded-xl p-5 border-t-4 border-t-blue-500">
+          <h3 class="text-blue-400 font-semibold mb-4">🔧 中期布局</h3>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li>• 硅光子散熱整合</li>
+            <li>• 800V 高壓液冷</li>
+            <li>• 2MW+ 散熱系統</li>
+          </ul>
+        </div>
+        <div class="card rounded-xl p-5 border-t-4 border-t-red-500">
+          <h3 class="text-red-400 font-semibold mb-4">⚠️ 長期風險</h3>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li>• 技術迭代快速</li>
+            <li>• 競爭者增加</li>
+            <li>• 客戶自研方案</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 動作 -->
+    <section class="mb-10">
+      <div class="section-header">
+        <div class="section-icon bg-amber-900/30 text-amber-400">✅</div>
+        <h2 class="text-xl font-bold text-white">建議跟進動作</h2>
+      </div>
+      <div class="card rounded-xl p-6">
+        <ol class="space-y-4">
+          <li class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+            <div><h4 class="text-white font-medium">確認 Vera Rubin 供應商合約細節</h4><p class="text-sm text-gray-400 mt-1">與 NVIDIA 確認冷板供應量與時程</p></div>
+          </li>
+          <li class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+            <div><h4 class="text-white font-medium">評估 45°C 熱水冷卻技術</h4><p class="text-sm text-gray-400 mt-1">新散熱系統的設計差異與商機</p></div>
+          </li>
+          <li class="flex gap-4">
+            <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+            <div><h4 class="text-white font-medium">啟動硅光子散熱研發</h4><p class="text-sm text-gray-400 mt-1">Feynman 2027-2028 來臨前的準備</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <footer class="text-center text-gray-600 text-xs pt-8 pb-4 border-t border-gray-800">
+      <p class="mb-1">情報來源：NVIDIA GTC, DigiTimes, HPCwire, Liteon, Business Wire</p>
+      <p class="mt-1">建立時間：2026-03-19</p>
+    </footer>
+
+  </div>
+</body>
+</html>

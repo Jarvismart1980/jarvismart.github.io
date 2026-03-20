@@ -1,71 +1,90 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>James 每日產業情報</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
-      margin: 0;
-      padding: 40px;
-      background: #0b1220;
-      color: #e5e7eb;
-    }
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-    .sub {
-      color: #94a3b8;
-      margin-bottom: 32px;
-    }
-    .card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-    a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .tag {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #1e293b;
-      color: #cbd5e1;
-      font-size: 13px;
-      margin-right: 8px;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0b0c10; color: #c5c6d0; }
+    .gradient-bg { background: linear-gradient(135deg, #0b0c10 0%, #1a1a2e 100%); }
+    .card { background: linear-gradient(145deg, #1f1f2e 0%, #16161f 100%); border: 1px solid #2d2d3a; }
+    .card-hover:hover { border-color: #4f46e5; transform: translateY(-2px); transition: all 0.3s ease; }
+    .badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+    .badge-high { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .badge-opportunity { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .delta-box { border-left: 3px solid; padding-left: 12px; }
+    .delta-positive { border-color: #10b981; }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <h1>James 每日產業情報</h1>
-    <div class="sub">GitHub Pages 測試首頁｜之後將放小賈每日晨報</div>
-
-    <div class="card">
-      <div class="tag">Latest</div>
-      <h2>最新報告</h2>
-      <p>目前網站已成功建立。下一步可加入每日 HTML 晨報。</p>
-      <p><a href="#">2026-03-17 GTC / CPO 情報報告（待更新）</a></p>
+<body class="gradient-bg min-h-screen p-4 md:p-6 lg:p-8">
+  <div class="max-w-5xl mx-auto">
+    <header class="mb-8">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+        <div>
+          <span class="text-xs text-gray-500 uppercase tracking-widest">James 每日產業情報</span>
+          <h1 class="text-2xl md:text-3xl font-bold text-white mt-1">GTC 2026 持續發酵</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="badge badge-high">獨家</span>
+          <span class="text-sm text-gray-400">2026.03.19</span>
+        </div>
+      </div>
+      <div class="card rounded-2xl p-6 border-l-4 border-l-indigo-500 mb-6">
+        <div class="flex items-start gap-3">
+          <div class="text-2xl">💡</div>
+          <div>
+            <h3 class="text-white font-semibold mb-2">今日一句結論</h3>
+            <p class="text-gray-300 leading-relaxed">
+              <span class="text-indigo-400 font-semibold">NVIDIA 液冷供應商名單公佈</span> — AVC、酷碼、Jentech、Delta 入列。Feynman 將全面採用硅光子，對 Delta 既是<span class="text-green-400 font-semibold">機會</span>也是<span class="text-yellow-400 font-semibold">挑戰</span>。
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-white">4</div><div class="text-xs text-gray-500 uppercase">供應商</div></div>
+      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-green-400">45°C</div><div class="text-xs text-gray-500 uppercase">熱水冷</div></div>
+      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-purple-400">14x</div><div class="text-xs text-gray-500 uppercase">Feynman</div></div>
+      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-indigo-400">1,450</div><div class="text-xs text-gray-500 uppercase">台達電</div></div>
     </div>
-
-    <div class="card">
-      <div class="tag">About</div>
-      <h2>網站用途</h2>
-      <p>這裡會整理 AI server、liquid cooling、CPO、客戶與競爭對手動向，作為 James 的每日產業情報站。</p>
-    </div>
+    <section class="mb-10">
+      <div class="section-header"><div class="section-icon bg-red-900/30 text-red-400">🔥</div><h2 class="text-xl font-bold text-white">今日最重要 3 件事</h2></div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="card card-hover rounded-xl p-6 delta-box delta-positive">
+          <h3 class="text-lg font-bold text-white mb-2">液冷供應商公佈</h3>
+          <p class="text-sm text-gray-400 mb-4">Delta、AVC、Jentech、酷碼入選 Vera Rubin 冷板供應商</p>
+          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-green-400 font-medium">✅ Delta 入列！</p></div>
+        </div>
+        <div class="card card-hover rounded-xl p-6 delta-box delta-positive">
+          <h3 class="text-lg font-bold text-white mb-2">Feynman 硅光子</h3>
+          <p class="text-sm text-gray-400 mb-4">2027-2028 量產，14x 效能，取代銅線互連</p>
+          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-yellow-400 font-medium">⚠️ 需提前布局</p></div>
+        </div>
+        <div class="card card-hover rounded-xl p-6 delta-box delta-positive">
+          <h3 class="text-lg font-bold text-white mb-2">45°C 熱水標準</h3>
+          <p class="text-sm text-gray-400 mb-4">Vera Rubin 採用 45°C 熱水設施冷卻</p>
+          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-green-400 font-medium">✅ 新標準建立</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="mb-10">
+      <div class="card rounded-xl p-6 text-center">
+        <h3 class="text-white font-semibold mb-2">📄 完整報告</h3>
+        <a href="reports/2026-03-19.html" class="text-indigo-400 hover:text-indigo-300 text-lg">查看完整版 →</a>
+      </div>
+    </section>
+    <section class="mb-10">
+      <h3 class="text-white font-semibold mb-4">📚 歷史報告</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="reports/2026-03-17.html" class="card rounded-lg p-4 hover:border-indigo-500 transition"><div class="text-white font-medium">2026-03-17</div><div class="text-gray-500 text-sm">GTC 首日</div></a>
+        <a href="reports/2026-03-16.html" class="card rounded-lg p-4 hover:border-indigo-500 transition"><div class="text-white font-medium">2026-03-16</div><div class="text-gray-500 text-sm">AI 散熱</div></a>
+      </div>
+    </section>
+    <footer class="text-center text-gray-600 text-xs pt-8 pb-4 border-t border-gray-800"><p>James 每日產業情報 | Delta TMSBU</p></footer>
   </div>
 </body>
 </html>
