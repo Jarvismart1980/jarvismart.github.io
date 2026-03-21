@@ -1,88 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>James 每日產業情報</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Inter', -apple-system, sans-serif; background: #0b0c10; color: #c5c6d0; }
-    .gradient-bg { background: linear-gradient(135deg, #0b0c10 0%, #1a1a2e 100%); }
-    .card { background: linear-gradient(145deg, #1f1f2e 0%, #16161f 100%); border: 1px solid #2d2d3a; }
-    .card-hover:hover { border-color: #4f46e5; transform: translateY(-2px); transition: all 0.3s ease; }
-    .badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
-    .badge-high { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
-    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    body { font-family: Arial, "PingFang TC", sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.7; padding: 0 16px; }
+    a { color: #0969da; }
   </style>
 </head>
-<body class="gradient-bg min-h-screen p-4 md:p-6 lg:p-8">
-  <div class="max-w-5xl mx-auto">
-    <header class="mb-8">
-      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
-        <div>
-          <span class="text-xs text-gray-500 uppercase tracking-widest">James 每日產業情報</span>
-          <h1 class="text-2xl md:text-3xl font-bold text-white mt-1">GTC 2026 持續發酵</h1>
-        </div>
-        <div class="flex items-center gap-3">
-          <span class="badge badge-high">獨家</span>
-          <span class="text-sm text-gray-400">2026.03.20</span>
-        </div>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-l-indigo-500 mb-6">
-        <div class="flex items-start gap-3">
-          <div class="text-2xl">💡</div>
-          <div>
-            <h3 class="text-white font-semibold mb-2">今日一句結論</h3>
-            <p class="text-gray-300 leading-relaxed">
-              <span class="text-indigo-400 font-semibold">液冷全面來臨</span> — Microsoft Azure 快速導入液冷 GB200。NVIDIA 投資<span class="text-purple-400 font-semibold">Lumentum + Coherent</span> $4B 搶光學產能。TrendForce 預測 2030 年 CPO 滲透率達 35%。Delta 入選供應商，有望受惠這波液冷潮。
-            </p>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-green-400">$4B</div><div class="text-xs text-gray-500 uppercase">NVIDIA 光學投資</div></div>
-      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-yellow-400">35%</div><div class="text-xs text-gray-500 uppercase">2030 CPO 滲透</div></div>
-      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-indigo-400">1,475</div><div class="text-xs text-gray-500 uppercase">台達電股價</div></div>
-      <div class="card rounded-xl p-4 text-center"><div class="text-2xl font-bold text-white">5x</div><div class="text-xs text-gray-500 uppercase">CPO 功耗</div></div>
-    </div>
-    <section class="mb-10">
-      <div class="section-header"><div class="section-icon bg-red-900/30 text-red-400">🔥</div><h2 class="text-xl font-bold text-white">今日最重要 3 件事</h2></div>
-      <div class="grid md:grid-cols-3 gap-5">
-        <div class="card card-hover rounded-xl p-6 border-l-4 border-l-green-500">
-          <h3 class="text-lg font-bold text-white mb-2">Microsoft Azure 液冷</h3>
-          <p class="text-sm text-gray-400 mb-4">Azure 快速導入液冷 GB200，帶動資料中心液冷趨勢</p>
-          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-green-400 font-medium">✅ 產業趨勢確立</p></div>
-        </div>
-        <div class="card card-hover rounded-xl p-6 border-l-4 border-l-purple-500">
-          <h3 class="text-lg font-bold text-white mb-2">NVIDIA $4B 光學投資</h3>
-          <p class="text-sm text-gray-400 mb-4">投資 Lumentum + Coherent 各 $2B，搶光學產能</p>
-          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-purple-400 font-medium">🔮 壟斷供應鏈</p></div>
-        </div>
-        <div class="card card-hover rounded-xl p-6 border-l-4 border-l-blue-500">
-          <h3 class="text-lg font-bold text-white mb-2">CPO 2030 滲透率 35%</h3>
-          <p class="text-sm text-gray-400 mb-4">TrendForce 預測 AI 資料中心 CPO 滲透率</p>
-          <div class="pt-3 border-t border-gray-700"><p class="text-xs text-blue-400 font-medium">📈 長期趨勢</p></div>
-        </div>
-      </div>
-    </section>
-    <section class="mb-10">
-      <div class="card rounded-xl p-6 text-center">
-        <h3 class="text-white font-semibold mb-2">📄 完整報告</h3>
-        <a href="reports/2026-03-20.html" class="text-indigo-400 hover:text-indigo-300 text-lg">查看完整版 →</a>
-      </div>
-    </section>
-    <section class="mb-10">
-      <h3 class="text-white font-semibold mb-4">📚 歷史報告</h3>
-      <div class="grid md:grid-cols-4 gap-4">
-        <a href="reports/2026-03-19.html" class="card rounded-lg p-4 hover:border-indigo-500 transition"><div class="text-white font-medium">2026-03-19</div><div class="text-gray-500 text-sm">GTC 後續</div></a>
-        <a href="reports/2026-03-17.html" class="card rounded-lg p-4 hover:border-indigo-500 transition"><div class="text-white font-medium">2026-03-17</div><div class="text-gray-500 text-sm">GTC Day 1</div></a>
-        <a href="reports/2026-03-20_weekly.html" class="card rounded-lg p-4 hover:border-indigo-500 transition"><div class="text-white font-medium">2026-03-20</div><div class="text-gray-500 text-sm">本週週報</div></a>
-      </div>
-    </section>
-    <footer class="text-center text-gray-600 text-xs pt-8 pb-4 border-t border-gray-800"><p>James 每日產業情報 | Delta TMSBU</p></footer>
-  </div>
+<body>
+  <h1>James 每日產業情報</h1>
+  <p>最新報告：</p>
+  <ul>
+    <li><a href="reports/2026-03-21.html">2026-03-21 每日產業情報</a></li>
+  </ul>
 </body>
 </html>
