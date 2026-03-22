@@ -17,82 +17,108 @@
     <header class="mb-8">
       <a href="../index.html" class="text-indigo-400 hover:text-indigo-300 mb-4 inline-block">← 返回首頁</a>
       <h1 class="text-2xl md:text-3xl font-bold text-white mb-2">📬 Gmail 郵件分類</h1>
-      <p class="text-gray-400">2026-03-22 | 最近 10 封郵件</p>
+      <p class="text-gray-400">2026-03-22 | 最近 20 封郵件</p>
     </header>
 
-    <!-- 銀行/消費 -->
-    <section class="mb-8">
-      <h2 class="text-lg font-bold text-green-400 mb-4 flex items-center gap-2">
-        <span>🏦</span> 銀行消費通知
+    <!-- 消費類 -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+        <span>💳</span> 消費記錄
       </h2>
+      <div class="card rounded-xl p-6 mb-4 border-l-4 border-l-green-500">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-white font-semibold">總消費金額</span>
+          <span class="text-2xl font-bold text-green-400">NT$ 77,431</span>
+        </div>
+        <div class="text-sm text-gray-400">
+          <p>• 國內消費：NT$15,973（3/13）</p>
+          <p>• 美國旅遊消費：NT$61,458（3/14）</p>
+        </div>
+      </div>
       <div class="space-y-3">
         <div class="card rounded-lg p-4">
           <div class="flex justify-between items-start mb-2">
-            <span class="text-white font-medium">國泰世華銀行消費彙整通知</span>
-            <span class="text-xs text-gray-500">3/21</span>
+            <div>
+              <span class="text-white font-medium">🏦 國泰世華銀行 - 國內消費</span>
+              <p class="text-xs text-gray-500 mt-1">2026-03-13</p>
+            </div>
+            <span class="text-green-400 font-bold">NT$ 15,973</span>
           </div>
-          <p class="text-sm text-gray-400">消費總額：NT$15,973（同一封的兩個版本）</p>
         </div>
         <div class="card rounded-lg p-4">
           <div class="flex justify-between items-start mb-2">
-            <span class="text-white font-medium">國泰世華銀行消費彙整通知</span>
-            <span class="text-xs text-gray-500">3/14</span>
+            <div>
+              <span class="text-white font-medium">✈️ 美國旅遊消費</span>
+              <p class="text-xs text-gray-500 mt-1">2026-03-14</p>
+            </div>
+            <span class="text-green-400 font-bold">NT$ 61,458</span>
           </div>
-          <p class="text-sm text-gray-400">美國消費：PHO HA NOI (NT$2,961) + HERTZ 租車 (NT$26,285) + SPRINGHILL SUITES (NT$32,212) = NT$61,458</p>
+          <div class="mt-2 pl-4 text-sm text-gray-400 space-y-1">
+            <p>• PHO HA NOI（餐廳）：NT$ 2,961</p>
+            <p>• HERTZ（租車）：NT$ 26,285</p>
+            <p>• SPRINGHILL SUITES（飯店）：NT$ 32,212</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 購物/優惠 -->
-    <section class="mb-8">
-      <h2 class="text-lg font-bold text-pink-400 mb-4 flex items-center gap-2">
-        <span>🛒</span> 購物優惠
+    <!-- 廣告類 -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-pink-400 mb-4 flex items-center gap-2">
+        <span>📢</span> 廣告優惠
       </h2>
       <div class="space-y-3">
-        <div class="card rounded-lg p-4">
+        <div class="card rounded-lg p-4 border-l-4 border-l-pink-500">
           <div class="flex justify-between items-start mb-2">
-            <span class="text-white font-medium">momo 購物網 - 2000 元折價券即將失效</span>
-            <span class="text-xs text-gray-500">3/21</span>
+            <div>
+              <span class="text-white font-medium">🛒 momo 購物網 - 2000元折價券</span>
+              <p class="text-xs text-gray-500 mt-1">2026-03-21 22:36</p>
+            </div>
+            <span class="badge bg-red-600 text-white text-xs px-2 py-1 rounded">即將失效</span>
           </div>
-          <p class="text-sm text-gray-400">提醒：折價券將於 23:59 失效</p>
+          <p class="text-sm text-gray-400">⚠️ 折價券將於當日 23:59 失效</p>
         </div>
-        <div class="card rounded-lg p-4">
+        <div class="card rounded-lg p-4 border-l-4 border-l-pink-500">
           <div class="flex justify-between items-start mb-2">
-            <span class="text-white font-medium">momo 購物網 - 隱藏版折價券</span>
-            <span class="text-xs text-gray-500">3/20</span>
+            <div>
+              <span class="text-white font-medium">🎟️ momo 購物網 - 隱藏版折價券</span>
+              <p class="text-xs text-gray-500 mt-1">2026-03-20</p>
+            </div>
           </div>
-          <p class="text-sm text-gray-400">行銷 EDM，與投資無關</p>
+          <p class="text-sm text-gray-400">江小姐發送之 momo 促銷 EDM</p>
         </div>
       </div>
     </section>
 
-    <!-- 安全通知 -->
-    <section class="mb-8">
-      <h2 class="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-        <span>🔒</span> 安全通知
+    <!-- 系統通知 -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
+        <span>🔔</span> 系統通知
+      </h2>
+      <div class="space-y-3">
+        <div class="card rounded-lg p-4">
+          <span class="text-white font-medium">🔒 Google 安全性快訊</span>
+          <p class="text-sm text-gray-400 mt-1">Mac mini 新裝置登入（正常）</p>
+        </div>
+        <div class="card rounded-lg p-4">
+          <span class="text-white font-medium">📧 OpenAI 發票通知</span>
+          <p class="text-sm text-gray-400 mt-1">⚠️ 注意：來自 tax.openai.com（網域不存在，可能是假的）</p>
+        </div>
+        <div class="card rounded-lg p-4">
+          <span class="text-white font-medium">❌ 退信通知</span>
+          <p class="text-sm text-gray-400 mt-1">嘗試回覆 OpenAI 失敗（網域不存在）</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jarvis 對話 -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+        <span>🤖</span> Jarvis 對話
       </h2>
       <div class="card rounded-lg p-4">
-        <div class="flex justify-between items-start mb-2">
-          <span class="text-white font-medium">Google 安全性快訊</span>
-          <span class="text-xs text-gray-500">3/20</span>
-        </div>
-        <p class="text-sm text-gray-400">Mac mini 新裝置登入通知（自己的裝置，無問題）</p>
-      </div>
-    </section>
-
-    <!-- 對話記錄 -->
-    <section class="mb-8">
-      <h2 class="text-lg font-bold text-purple-400 mb-4 flex items-center gap-2">
-        <span>💬</span> Jarvis 對話記錄
-      </h2>
-      <div class="space-y-3">
-        <div class="card rounded-lg p-4">
-          <div class="flex justify-between items-start mb-2">
-            <span class="text-white font-medium">Re: 3/19 報告</span>
-            <span class="text-xs text-gray-500">3/22</span>
-          </div>
-          <p class="text-sm text-gray-400">你傳了報告連結多次，Jarvis 詢問需求（每日早上自動發送 AI 散熱新聞 + 股票報價）</p>
-        </div>
+        <span class="text-white font-medium">💬 3/19 報告</span>
+        <p class="text-sm text-gray-400 mt-1">你多次傳送報告連結，系統已回覆</p>
       </div>
     </section>
 
