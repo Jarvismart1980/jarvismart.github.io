@@ -16,10 +16,19 @@
       padding: 24px;
       -webkit-font-smoothing: antialiased;
     }
-    .container { max-width: 480px; margin: 0 auto; }
+    .container { max-width: 520px; margin: 0 auto; }
     .header { margin-bottom: 20px; }
     .header h1 { font-size: 24px; font-weight: 700; color: #111; letter-spacing: -0.5px; }
     .date { color: #6b7280; font-size: 14px; margin-top: 4px; }
+    .summary-card {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .summary-label { font-size: 12px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+    .summary-text { font-size: 18px; font-weight: 600; margin-top: 8px; line-height: 1.5; }
     
     .card { 
       background: #fff; 
@@ -54,12 +63,47 @@
     
     .trend-grid { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag { background: #eff6ff; color: #2563eb; padding: 8px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
+    .tag-red { background: #fef2f2; color: #dc2626; }
+    .tag-green { background: #f0fdf4; color: #16a34a; }
+    .tag-yellow { background: #fefce8; color: #ca8a04; }
     
-    .info-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; }
+    .info-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px solid #f3f4f6; }
+    .info-row:last-child { border-bottom: none; }
     .info-label { color: #6b7280; }
     .info-value { color: #1f2937; font-weight: 500; }
     
+    .action-list { list-style: none; }
+    .action-list li { 
+      padding: 12px 0; 
+      border-bottom: 1px solid #f3f4f6; 
+      display: flex; 
+      align-items: flex-start; 
+      gap: 12px;
+    }
+    .action-list li:last-child { border-bottom: none; }
+    .action-num { 
+      background: #2563eb; 
+      color: #fff; 
+      width: 24px; 
+      height: 24px; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 12px; 
+      font-weight: 600; 
+      flex-shrink: 0;
+    }
+    .action-text { font-size: 14px; line-height: 1.5; }
+    
     .footer { text-align: center; color: #9ca3af; margin-top: 24px; font-size: 12px; }
+
+    .section { margin-bottom: 24px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .section-badge { 
+      background: #2563eb; color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; 
+    }
+    .section-name { font-size: 18px; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -69,61 +113,96 @@
       <p class="date">Sunday, March 29, 2026</p>
     </div>
 
-    <div class="card">
-      <div class="card-title">持股</div>
-      <div class="stock-row">
-        <span class="stock-name">2308 台達電</span>
-        <div class="stock-right">
-          <span class="stock-price">1,510</span>
-          <span class="stock-change up">+0.33%</span>
-        </div>
+    <div class="summary-card">
+      <div class="summary-label">🔑 今日一句話</div>
+      <div class="summary-text">液冷散熱滲透率達57%創歷史新高，相關族群有望迎來補漲行情。</div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-badge">A</span>
+        <span class="section-name">工作相關</span>
       </div>
-      <div class="stock-row">
-        <span class="stock-name">2408 南亞科</span>
-        <div class="stock-right">
-          <span class="stock-price">219.5</span>
-          <span class="stock-change down">-2.66%</span>
-        </div>
-      </div>
-      <div class="stock-row">
-        <span class="stock-name">BTC 比特幣</span>
-        <div class="stock-right">
-          <span class="stock-price">$66,700</span>
-          <span class="stock-change down">▼2.3%</span>
+
+      <div class="card">
+        <div class="card-title">💼 工作重點 3 條</div>
+        <div class="action-list">
+          <li><span class="action-num">1</span><span class="action-text"><strong>🔥 AI伺服器液冷主流化</strong><br>GB200/Vera Rubin全液冷方案出爐，2026滲透率57%→80%，市場爆發在即。</span></li>
+          <li><span class="action-num">2</span><span class="action-text"><strong>📈 台廠受惠</strong><br>台達電、奇鋐、富世達散熱族群訂單能见度提升，供應鏈優先受惠。</span></li>
+          <li><span class="action-num">3</span><span class="action-text"><strong>🎯 NVIDIA動態</strong><br>Vera Rubin支援45°C液冷，散熱設計門檻提高，技術落後者將被邊緣化。</span></li>
         </div>
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-title">趨勢情報</div>
-      <div class="section-title" style="font-size:14px;margin-bottom:14px;">AI 散熱</div>
-      <div class="trend-grid">
-        <span class="tag">液冷主流</span>
-        <span class="tag">57%</span>
-        <span class="tag">NVIDIA</span>
-        <span class="tag">Vera Rubin</span>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-badge">B</span>
+        <span class="section-name">個人相關</span>
       </div>
-      <div style="margin-top:16px;">
-        <div class="info-row"><span class="info-label">市場規模</span><span class="info-value">2026 84.6億美元</span></div>
-        <div class="info-row"><span class="info-label">滲透率</span><span class="info-value">57% → 80%</span></div>
-        <div class="info-row"><span class="info-label">台廠</span><span class="info-value">台達電、奇鋐、富世達</span></div>
+
+      <div class="card">
+        <div class="card-title">💰 持股</div>
+        <div class="stock-row">
+          <span class="stock-name">2308 台達電</span>
+          <div class="stock-right">
+            <span class="stock-price">1,510</span>
+            <span class="stock-change up">+0.33%</span>
+          </div>
+        </div>
+        <div class="stock-row">
+          <span class="stock-name">2408 南亞科</span>
+          <div class="stock-right">
+            <span class="stock-price">219.5</span>
+            <span class="stock-change down">-2.66%</span>
+          </div>
+        </div>
+        <div class="stock-row">
+          <span class="stock-name">BTC 比特幣</span>
+          <div class="stock-right">
+            <span class="stock-price">$66,700</span>
+            <span class="stock-change down">▼2.3%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📊 投資重點</div>
+        <div class="trend-grid">
+          <span class="tag">2308偏多</span>
+          <span class="tag-red">2408偏空</span>
+          <span class="tag-yellow">BTC觀望</span>
+        </div>
+        <div style="margin-top:16px;">
+          <div class="info-row"><span class="info-label">2308</span><span class="info-value">液冷題材支撐，中長線偏多</span></div>
+          <div class="info-row"><span class="info-label">2408</span><span class="info-value">記憶體景氣放緩，短期承壓</span></div>
+          <div class="info-row"><span class="info-label">BTC</span><span class="info-value">區間整理，觀望為主</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📅 Calendar</div>
+        <div class="info-row"><span class="info-label">今日</span><span class="info-value">無預定行程</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📧 Gmail</div>
+        <div class="info-row"><span class="info-label">最近</span><span class="info-value">Google 安全性快訊</span></div>
+        <div class="info-row"><span class="info-label"></span><span class="info-value">MEGA 升級通知</span></div>
+        <div class="info-row"><span class="info-label"></span><span class="info-value">OpenAI API 更新</span></div>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-title">Gmail</div>
-      <div class="info-row"><span class="info-label">最近</span><span class="info-value">Google 安全性快訊</span></div>
-      <div class="info-row"><span class="info-label"></span><span class="info-value">MEGA 升級通知</span></div>
-      <div class="info-row"><span class="info-label"></span><span class="info-value">OpenAI API 更新</span></div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Calendar</div>
-      <div class="info-row"><span class="info-label">今日</span><span class="info-value">無行程</span></div>
+      <div class="card-title">⚡ 今日行動建議</div>
+      <div class="action-list">
+        <li><span class="action-num">1</span><span class="action-text">追蹤散熱族群股價表現，逢低布局</span></li>
+        <li><span class="action-num">2</span><span class="action-text">持續關注NVIDIA Vera Rubin量產時程</span></li>
+        <li><span class="action-num">3</span><span class="action-text">檢視持股風險，適時停損</span></li>
+      </div>
     </div>
 
     <div class="footer">
-      🤖 by Jarvis
+      🤖 by Jarvis · 更新於 2026-03-29 08:00
     </div>
   </div>
 </body>
