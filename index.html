@@ -3,175 +3,338 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James Daily Report</title>
+  <title>James Daily Report - Bento Dashboard</title>
   <style>
+    /* ====== Reset & Base ====== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "PingFang TC", sans-serif; 
-      background: #f5f5f5;
-      color: #1d1d1f; 
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif; 
+      background: #f2f2f7;
+      color: #1c1c1e; 
       min-height: 100vh;
-      padding: 0;
       -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
     }
-    .container { max-width: 600px; margin: 0 auto; background: #fff; min-height: 100vh; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px 0 32px; }
     
-    /* Header */
-    .header { background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 100%); color: #fff; padding: 32px 24px; }
-    .header-label { font-size: 11px; letter-spacing: 2px; opacity: 0.7; text-transform: uppercase; }
-    .header h1 { font-size: 28px; font-weight: 700; margin-top: 8px; letter-spacing: -0.5px; }
-    .header-date { font-size: 14px; opacity: 0.7; margin-top: 4px; }
-    
-    /* Summary Card */
-    .summary { background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%); color: #fff; padding: 24px; margin: -20px 20px 20px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,122,255,0.25); }
-    .summary-label { font-size: 11px; letter-spacing: 1.5px; opacity: 0.85; text-transform: uppercase; }
-    .summary-text { font-size: 20px; font-weight: 600; margin-top: 8px; line-height: 1.5; }
-    
-    /* Main Content */
-    .content { padding: 0 20px 24px; }
-    
-    /* Section Badge */
-    .section-badge { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .badge { background: #1a1a2e; color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
-    .section-title { font-size: 18px; font-weight: 700; color: #1a1a2e; }
-    
-    /* Priority Items */
-    .priority-card { background: #f8f9fa; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
-    .priority-num { 
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 28px; height: 28px; 
-      background: #007AFF; color: #fff; 
-      border-radius: 8px; font-size: 14px; font-weight: 700; 
-      margin-right: 12px;
+    /* ====== Hero Section ====== */
+    .hero {
+      background: linear-gradient(135deg, #1c1c1e 0%, #2c2c4a 50%, #3a3a5c 100%);
+      color: #fff;
+      padding: 40px 24px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
     }
-    .priority-title { font-size: 15px; font-weight: 600; color: #1d1d1f; }
-    .priority-desc { font-size: 14px; color: #666; margin-top: 6px; line-height: 1.5; }
-    .priority-tag { 
-      display: inline-block; margin-top: 10px; 
-      padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; 
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    }
+    .hero-label { font-size: 11px; letter-spacing: 2px; opacity: 0.7; text-transform: uppercase; }
+    .hero h1 { font-size: 26px; font-weight: 700; margin: 8px 0; letter-spacing: -0.5px; }
+    .hero-date { font-size: 14px; opacity: 0.7; }
+    .hero-summary { 
+      font-size: 18px; font-weight: 600; margin-top: 20px; 
+      line-height: 1.5; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    /* ====== Bento Grid ====== */
+    .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 16px 16px; }
+    .bento-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .bento-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .bento-card-full { grid-column: span 3; }
+    .bento-card-half { grid-column: span 1.5; }
+    
+    .bento-label { font-size: 10px; letter-spacing: 1px; color: #8e8e93; text-transform: uppercase; margin-bottom: 8px; }
+    .bento-title { font-size: 15px; font-weight: 600; color: #1c1c1e; }
+    .bento-desc { font-size: 13px; color: #636366; margin-top: 6px; line-height: 1.4; }
+    
+    /* ====== Priority 3 Cards ====== */
+    .priority-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #f2f2f7;
+    }
+    .priority-item:last-child { border-bottom: none; }
+    .priority-num {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .priority-num.opportunity { background: #34C759; color: #fff; }
+    .priority-num.risk { background: #ff3b30; color: #fff; }
+    .priority-num.action { background: #007aff; color: #fff; }
+    .priority-content { flex: 1; }
+    .priority-title { font-size: 14px; font-weight: 600; }
+    .priority-note { font-size: 12px; color: #636366; margin-top: 4px; }
+    
+    /* ====== Tags ====== */
+    .tag { 
+      display: inline-block; padding: 4px 10px; border-radius: 6px; 
+      font-size: 11px; font-weight: 600; 
     }
     .tag-up { background: #dcfce7; color: #166534; }
     .tag-down { background: #fee2e2; color: #dc2626; }
-    .tag-neutral { background: #f3f4f6; color: #666; }
+    .tag-neutral { background: #f2f2f7; color: #636366; }
+    .tag-warning { background: #fef3c7; color: #d97706; }
     
-    /* Stock Table */
-    .stock-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    .stock-table th { text-align: left; font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 0; border-bottom: 1px solid #eee; }
-    .stock-table td { padding: 12px 0; border-bottom: 1px solid #f5f5f5; font-size: 14px; }
-    .stock-table .num { text-align: right; font-weight: 600; }
-    
-    /* Info List */
-    .info-list { padding: 12px 0; }
-    .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f5f5f5; font-size: 14px; }
-    .info-row:last-child { border-bottom: none; }
-    .info-key { color: #666; }
-    .info-val { font-weight: 500; }
-    
-    /* Action Card */
-    .action-list { list-style: none; }
-    .action-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f5f5f5; }
-    .action-item:last-child { border-bottom: none; }
-    .action-num { 
-      background: #1a1a2e; color: #fff; 
-      width: 24px; height: 24px; 
-      border-radius: 50%; 
-      display: flex; align-items: center; justify-content: center; 
-      font-size: 12px; font-weight: 600; flex-shrink: 0;
+    /* ====== Stock Table ====== */
+    .stock-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f2f2f7;
     }
-    .action-text { font-size: 14px; line-height: 1.5; }
+    .stock-row:last-child { border-bottom: none; }
+    .stock-name { font-size: 14px; font-weight: 500; }
+    .stock-price { font-size: 14px; font-weight: 600; margin-right: 8px; }
+    .stock-change { font-size: 12px; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
     
-    /* Footer */
-    .footer { text-align: center; color: #999; padding: 24px; font-size: 12px; border-top: 1px solid #eee; margin-top: 24px; }
+    /* ====== Section ====== */
+    .section { margin: 0 16px 16px; }
+    .section-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 12px;
+    }
+    .section-badge {
+      padding: 4px 10px; border-radius: 6px;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+    .section-badge.work { background: #5856d6; }
+    .section-badge.personal { background: #34c759; }
+    .section-title { font-size: 18px; font-weight: 700; color: #1c1c1e; }
+    
+    /* ====== Tech Analysis ====== */
+    .tech-row {
+      display: flex; justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #f2f2f7;
+      font-size: 13px;
+    }
+    .tech-label { color: #636366; }
+    .tech-val { font-weight: 500; }
+    
+    /* ====== Action ====== */
+    .action-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .action-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px;
+      border-bottom: 1px solid #f2f2f7;
+    }
+    .action-item:last-child { border-bottom: none; }
+    .action-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .action-do { background: #dcfce7; }
+    .action-track { background: #e0f2fe; }
+    .action-watch { background: #fef3c7; }
+    .action-text { font-size: 14px; font-weight: 500; }
+    
+    /* ====== Footer ====== */
+    .footer {
+      text-align: center; padding: 24px 16px;
+      color: #8e8e93; font-size: 12px;
+    }
+    .footer a { color: #007aff; text-decoration: none; }
+    
+    @media (max-width: 500px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-card-full, .bento-card-half { grid-column: span 1; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <div class="header-label">James Daily Report</div>
+    
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-label">James Daily Report</div>
       <h1>智慧早報</h1>
-      <div class="header-date">Sunday, March 29, 2026</div>
+      <div class="hero-date">Sunday, March 29, 2026</div>
+      <div class="hero-summary">
+        🔑 今日一句話：液冷散熱滲透率達57%創歷史新高，相關族群有望迎來補漲行情。
+      </div>
     </div>
-
-    <div class="summary">
-      <div class="summary-label">🔑 今日一句話</div>
-      <div class="summary-text">液冷散熱滲透率達57%創歷史新高，相關族群有望迎來補漲行情。</div>
+    
+    <!-- Priority 3 -->
+    <div class="bento-grid" style="margin-bottom:8px;">
+      <div class="bento-card bento-card-full">
+        <div class="section-header">
+          <span class="section-badge" style="background:#34C759;">TOP 3</span>
+          <span style="font-weight:700;font-size:15px;">今日最重要 3 件事</span>
+        </div>
+        <div class="priority-item">
+          <span class="priority-num opportunity">1</span>
+          <div class="priority-content">
+            <div class="priority-title">🎯 工作機會：液冷市場爆發</div>
+            <div class="priority-note">GB200/Vera Rubin全液冷方案，2026滲透率57%→80%，市場規模84.6億美元</div>
+          </div>
+        </div>
+        <div class="priority-item">
+          <span class="priority-num risk">2</span>
+          <div class="priority-content">
+            <div class="priority-title">⚠️ 風險：技術門檻提高</div>
+            <div class="priority-note">NVIDIA Vera Rubin支援45°C液冷，散熱設計難度提升，落後者可能被邊緣化</div>
+          </div>
+        </div>
+        <div class="priority-item">
+          <span class="priority-num action">3</span>
+          <div class="priority-content">
+            <div class="priority-title">⚡ 行動：布局散熱族群</div>
+            <div class="priority-note">台達電、奇鋐、富世達族群逢低布局，追蹤訂單能见度</div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="content">
-      <!-- A區塊：工作相關 -->
-      <div class="section-badge">
-        <span class="badge">A</span>
+    
+    <!-- Quick Summary 6 Cards -->
+    <div class="bento-grid">
+      <div class="bento-card">
+        <div class="bento-label">💼 工作 1</div>
+        <div class="bento-title">客戶與市場</div>
+        <div class="bento-desc">GB200全液冷方案出爐，市場滲透率57%→80%</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">💼 工作 2</div>
+        <div class="bento-title">水冷發展</div>
+        <div class="bento-desc">單相液冷成主流 NVIDIA Vera Rubin支援45°C</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">💼 工作 3</div>
+        <div class="bento-title">對手動態</div>
+        <div class="bento-desc">台廠訂單能见度提升，中国積極擴產</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">💰 個人 1</div>
+        <div class="bento-title">2308 台達電</div>
+        <div class="bento-desc">1,510 (+0.33%) 偏多</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">💰 個人 2</div>
+        <div class="bento-title">2408 南亞科</div>
+        <div class="bento-desc">219.5 (-2.66%) 偏空</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">💰 個人 3</div>
+        <div class="bento-title">BTC</div>
+        <div class="bento-desc">~$66,700 (-2.3%) 觀望</div>
+      </div>
+    </div>
+    
+    <!-- A: 工作相關 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-badge work">A</span>
         <span class="section-title">工作相關</span>
       </div>
       
-      <div class="priority-card">
-        <div><span class="priority-num">1</span><span class="priority-title">客戶與市場</span></div>
-        <div class="priority-desc">GB200/Vera Rubin全液冷方案出爐，2026滲透率57%→80%。NVIDIA Vera Rubin支援45°C液冷，散熱設計門檻提高。</div>
-        <span class="priority-tag tag-up">市場爆發</span>
+      <div class="bento-card" style="margin-bottom:12px;">
+        <div class="bento-label">📊 客戶與市場</div>
+        <div class="tech-row"><span class="tech-label">NVIDIA</span><span class="tech-val">Vera Rubin支援全液冷</span></div>
+        <div class="tech-row"><span class="tech-label">市場滲透率</span><span class="tech-val">57% → 80% (2026)</span></div>
+        <div class="tech-row"><span class="tech-label">市場規模</span><span class="tech-val">84.6億美元</span></div>
+        <div class="tech-row"><span class="tech-label">對我方影響</span><span class="tech-val" style="color:#34C759;">商機：台達電、奇鋐受惠</span></div>
       </div>
       
-      <div class="priority-card">
-        <div><span class="priority-num">2</span><span class="priority-title">水冷發展</span></div>
-        <div class="priority-desc">單相直接液冷成主流，冷板技術領先。GB200 NVL72功耗達120-130kW，需採用rack-level液冷。</div>
-        <span class="priority-tag tag-up">技術領先</span>
+      <div class="bento-card" style="margin-bottom:12px;">
+        <div class="bento-label">💧 水冷發展</div>
+        <div class="tech-row"><span class="tech-label">技術</span><span class="tech-val">單相液冷/冷板主流</span></div>
+        <div class="tech-row"><span class="tech-label">GB200 NVL72</span><span class="tech-val">120-130kW功耗</span></div>
+        <div class="tech-row"><span class="tech-label">散熱門檻</span><span class="tech-val" style="color:#ff9500;">提高</span></div>
+        <div class="tech-row"><span class="tech-label">建議</span><span class="tech-val">提前布局液冷技術</span></div>
       </div>
       
-      <div class="priority-card">
-        <div><span class="priority-num">3</span><span class="priority-title">產品技術</span></div>
-        <div class="priority-desc">3D VC、微流體散熱開始導入。高功耗晶片(>1000W)推動液冷成為剛需。</div>
-        <span class="priority-tag tag-neutral">觀望技術</span>
+      <div class="bento-card">
+        <div class="bento-label">🛠️ 對手動態</div>
+        <div class="tech-row"><span class="tech-label">台達電</span><span class="tech-val">液冷題材支撐</span></div>
+        <div class="tech-row"><span class="tech-label">奇鋐</span><span class="tech-val">下半年擴產</span></div>
+        <div class="tech-row"><span class="tech-label">富世達</span><span class="tech-val">訂單能见度提升</span></div>
+        <div class="tech-row"><span class="tech-label">中國</span><span class="tech-val" style="color:#ff9500;">積極擴產中</span></div>
       </div>
-
-      <div style="margin-top:8px;">
-        <div class="priority-card" style="margin-bottom:0;">
-          <div><span class="priority-title">對手動態</span></div>
-          <div class="priority-desc">台達電、奇鋐、富世達散熱族群訂單能见度提升。中國散熱模組廠積極擴產。</div>
-        </div>
-      </div>
-
-      <!-- B區塊：個人相關 -->
-      <div class="section-badge" style="margin-top:28px;">
-        <span class="badge">B</span>
+    </div>
+    
+    <!-- B: 個人相關 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-badge personal">B</span>
         <span class="section-title">個人相關</span>
       </div>
       
-      <div class="priority-card">
-        <div><span class="priority-num">1</span><span class="priority-title">持股與產業</span></div>
-        <table class="stock-table">
-          <tr><th>標的</th><th class="num">價格</th><th class="num">漲跌</th></tr>
-          <tr><td>2308 台達電</td><td class="num">1,510</td><td class="num"><span class="priority-tag tag-up">+0.33%</span></td></tr>
-          <tr><td>2408 南亞科</td><td class="num">219.5</td><td class="num"><span class="priority-tag tag-down">-2.66%</span></td></tr>
-          <tr><td>BTC</td><td class="num">$66,700</td><td class="num"><span class="priority-tag tag-down">-2.3%</span></td></tr>
-        </table>
-      </div>
-      
-      <div class="priority-card">
-        <div><span class="priority-num">2</span><span class="priority-title">今日行程</span></div>
-        <div class="priority-desc">今日無預定行程</div>
-      </div>
-      
-      <div class="priority-card">
-        <div><span class="priority-num">3</span><span class="priority-title">生活提醒</span></div>
-        <div class="priority-desc">無特殊提醒</div>
-      </div>
-
-      <!-- 行動建議 -->
-      <div style="margin-top:28px;">
-        <div class="section-badge">
-          <span class="badge" style="background:#34C759;">⚡</span>
-          <span class="section-title">今日行動建議</span>
+      <div class="bento-card" style="margin-bottom:12px;">
+        <div class="bento-label">💰 持股與產業</div>
+        <div class="stock-row">
+          <span class="stock-name">2308 台達電</span>
+          <div><span class="stock-price">1,510</span><span class="stock-change tag-up">+0.33%</span></div>
         </div>
-        <ul class="action-list">
-          <li><span class="action-num">1</span><span class="action-text">追蹤散熱族群股價表現，逢低布局</span></li>
-          <li><span class="action-num">2</span><span class="action-text">持續關注NVIDIA Vera Rubin量產時程</span></li>
-          <li><span class="action-num">3</span><span class="action-text">檢視持股風險，適時停損</span></li>
-        </ul>
+        <div class="stock-row">
+          <span class="stock-name">2408 南亞科</span>
+          <div><span class="stock-price">219.5</span><span class="stock-change tag-down">-2.66%</span></div>
+        </div>
+        <div class="stock-row">
+          <span class="stock-name">BTC</span>
+          <div><span class="stock-price">$66,700</span><span class="stock-change tag-down">-2.3%</span></div>
+        </div>
+      </div>
+      
+      <div class="bento-card" style="margin-bottom:12px;">
+        <div class="bento-label">📅 今日會議</div>
+        <div class="tech-row"><span class="tech-label">狀態</span><span class="tech-val">今日無預定行程</span></div>
+        <div class="tech-row"><span class="tech-label">建議</span><span class="tech-val">安排產業研究會議</span></div>
+      </div>
+      
+      <div class="bento-card">
+        <div class="bento-label">🏠 生活提醒</div>
+        <div class="tech-row"><span class="tech-label">狀態</span><span class="tech-val">無特殊提醒</span></div>
       </div>
     </div>
-
-    <div class="footer">
-      🤖 by Jarvis · 更新於 2026-03-29 08:00
+    
+    <!-- Action -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-badge" style="background:#ff9500;">⚡</span>
+        <span class="section-title">今日策略與行動</span>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-item">
+          <span class="action-icon action-do">▶</span>
+          <span class="action-text">追蹤散熱族群股價表現，逢低布局台達電/奇鋐</span>
+        </div>
+        <div class="action-item">
+          <span class="action-icon action-track">↻</span>
+          <span class="action-text">持續關注NVIDIA Vera Rubin量產時程與訂單分配</span>
+        </div>
+        <div class="action-item">
+          <span class="action-icon action-watch">◎</span>
+          <span class="action-text">觀望2408短線，若跌破215考慮停損</span>
+        </div>
+      </div>
     </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      🤖 by Jarvis · 更新於 2026-03-29 08:00<br>
+      <a href="https://jarvismart1980.github.io/jarvismart.github.io/">🔗 打開網頁版</a>
+    </div>
+    
   </div>
 </body>
 </html>
