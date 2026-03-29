@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James Daily Report v4</title>
+  <title>James Daily Report v5</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "PingFang TC", sans-serif; background: #f2f2f7; color: #1c1c1e; min-height: 100vh; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 700px; margin: 0 auto; padding: 16px 0 32px; }
+    .container { max-width: 720px; margin: 0 auto; padding: 16px 0 32px; }
     
     /* Hero */
-    .hero { background: linear-gradient(135deg, #1c1c1e 0%, #2c2c4a 100%); color: #fff; padding: 40px 24px; border-radius: 20px; margin-bottom: 16px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); }
+    .hero { background: linear-gradient(135deg, #1c1c1e 0%, #2c2c4a 100%); color: #fff; padding: 40px 24px; border-radius: 20px; margin-bottom: 16px; }
     .hero-label { font-size: 11px; letter-spacing: 2px; opacity: 0.7; text-transform: uppercase; }
-    .hero h1 { font-size: 26px; font-weight: 700; margin: 8px 0; letter-spacing: -0.5px; }
+    .hero h1 { font-size: 26px; font-weight: 700; margin: 8px 0; }
     .hero-date { font-size: 14px; opacity: 0.7; }
     .hero-summary { font-size: 18px; font-weight: 600; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); }
     
@@ -22,182 +21,313 @@
     .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
     .section-badge { padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; color: #fff; }
     .section-badge.work { background: #5856d6; }
-    .section-badge.new { background: #ff9500; }
-    .section-title { font-size: 18px; font-weight: 700; color: #1c1c1e; }
+    .section-title { font-size: 18px; font-weight: 700; }
     
-    /* Bento */
-    .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0 16px 16px; }
-    .bento-card { background: #fff; border-radius: 16px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-    .bento-full { grid-column: span 2; }
+    /* Deep Module */
+    .deep-module { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .deep-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .deep-num { font-size: 11px; font-weight: 700; color: #5856d6; letter-spacing: 1px; }
+    .deep-title { font-size: 16px; font-weight: 700; }
     
-    .bento-label { font-size: 10px; letter-spacing: 1px; color: #8e8e93; text-transform: uppercase; margin-bottom: 8px; }
-    .bento-title { font-size: 14px; font-weight: 600; color: #1c1c1e; }
-    .bento-desc { font-size: 12px; color: #636366; margin-top: 6px; line-height: 1.4; }
+    .deep-block { margin-bottom: 16px; }
+    .deep-block:last-child { margin-bottom: 0; }
+    .block-label { font-size: 11px; font-weight: 600; color: #5856d6; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .block-text { font-size: 13px; line-height: 1.6; color: #3c3c43; }
+    .block-item { font-size: 13px; line-height: 1.6; color: #3c3c43; padding: 4px 0; padding-left: 16px; position: relative; }
+    .block-item::before { content: '•'; position: absolute; left: 0; color: #5856d6; }
     
-    /* Tech Row */
-    .tech-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f2f2f7; font-size: 13px; }
-    .tech-row:last-child { border-bottom: none; }
-    .tech-label { color: #636366; }
-    .tech-val { font-weight: 500; }
+    .action-box { background: #f2f2f7; border-radius: 10px; padding: 12px 16px; margin-top: 12px; }
+    .action-title { font-size: 11px; font-weight: 600; color: #ff9500; margin-bottom: 6px; }
+    .action-text { font-size: 13px; font-weight: 500; }
     
     /* Stock */
     .stock-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f2f2f7; }
     .stock-row:last-child { border-bottom: none; }
     .stock-name { font-size: 14px; font-weight: 500; }
+    .stock-info { text-align: right; }
     .stock-price { font-size: 14px; font-weight: 600; margin-right: 8px; }
-    .stock-change { font-size: 12px; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
+    .stock-tag { font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
     .tag-up { background: #dcfce7; color: #166534; }
     .tag-down { background: #fee2e2; color: #dc2626; }
     .tag-neutral { background: #f2f2f7; color: #636366; }
+    .tag-long { background: #e0f2fe; color: #0369a1; }
+    .tag-short { background: #fef3c7; color: #d97706; }
     
-    /* Priority */
-    .priority-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f2f2f7; }
-    .priority-item:last-child { border-bottom: none; }
-    .priority-num { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
-    .priority-green { background: #34C759; color: #fff; }
-    .priority-red { background: #ff3b30; color: #fff; }
-    .priority-blue { background: #007aff; color: #fff; }
-    .priority-content { flex: 1; }
-    .priority-title { font-size: 14px; font-weight: 600; }
-    .priority-note { font-size: 12px; color: #636366; margin-top: 4px; }
+    /* Tags */
+    .tag-chip { display: inline-block; background: #f2f2f7; color: #636366; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; margin-right: 6px; margin-bottom: 6px; }
     
     /* Action */
     .action-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-    .action-item { display: flex; align-items: center; gap: 12px; padding: 16px; border-bottom: 1px solid #f2f2f7; }
+    .action-item { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid #f2f2f7; }
     .action-item:last-child { border-bottom: none; }
-    .action-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-    .action-green { background: #dcfce7; }
-    .action-blue { background: #e0f2fe; }
-    .action-yellow { background: #fef3c7; }
-    .action-text { font-size: 14px; font-weight: 500; }
+    .action-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-green { background: #34C759; }
+    .dot-blue { background: #007aff; }
+    .dot-yellow { background: #ff9500; }
+    .action-text { font-size: 13px; line-height: 1.4; }
     
     /* Footer */
     .footer { text-align: center; padding: 24px 16px; color: #8e8e93; font-size: 12px; }
     .footer a { color: #007aff; text-decoration: none; }
+    
+    @media (max-width: 500px) {
+      .container { padding: 12px 0; }
+      .section { margin: 0 12px 12px; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     
+    <!-- Hero -->
     <div class="hero">
       <div class="hero-label">James Daily Report</div>
-      <h1>智慧早報 v4</h1>
+      <h1>智慧早報 v5</h1>
       <div class="hero-date">Sunday, March 29, 2026</div>
-      <div class="hero-summary">🔑 今日一句話：液冷散熱滲透率達57%創新高，帶動散熱族群補漲。</div>
+      <div class="hero-summary">🔑 今日一句話：液冷散熱滲透率達57%創新高，CPO/NPO光學整合浮現熱耦合新挑戰。</div>
     </div>
     
-    <!-- Top 3 -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-badge" style="background:#34C759;">TOP 3</span>
-        <span class="section-title">今日最重要 3 件事</span>
-      </div>
-      <div class="bento-card bento-full">
-        <div class="priority-item">
-          <span class="priority-num priority-green">1</span>
-          <div class="priority-content">
-            <div class="priority-title">🎯 工作機會：液冷市場爆發</div>
-            <div class="priority-note">GB200/Vera Rubin全液冷，2026滲透率57%→80%，市場規模84.6億美元</div>
-          </div>
-        </div>
-        <div class="priority-item">
-          <span class="priority-num priority-red">2</span>
-          <div class="priority-content">
-            <div class="priority-title">⚠️ 風險：技術門檻提高</div>
-            <div class="priority-note">NVIDIA Vera Rubin 45°C液冷，散熱設計難度提升，落後者被邊緣化</div>
-          </div>
-        </div>
-        <div class="priority-item">
-          <span class="priority-num priority-blue">3</span>
-          <div class="priority-content">
-            <div class="priority-title">🌐 Networking CPO 熱挑戰</div>
-            <div class="priority-note">CPO/NPO光學整合浮現熱耦合新問題，需要新散熱方案</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Work Modules (7) -->
+    <!-- 工作相關 7 模組 -->
     <div class="section">
       <div class="section-header">
         <span class="section-badge work">A</span>
         <span class="section-title">工作相關 7 大模組</span>
       </div>
       
-      <!-- 1. 客戶市場 -->
-      <div class="bento-card" style="margin-bottom:12px;">
-        <div class="bento-label">1 🎯 客戶與市場</div>
-        <div class="tech-row"><span class="tech-label">NVIDIA</span><span class="tech-val">Vera Rubin全液冷</span></div>
-        <div class="tech-row"><span class="tech-label">滲透率</span><span class="tech-val">57% → 80%</span></div>
-        <div class="tech-row"><span class="tech-label">商機</span><span class="tech-val" style="color:#34C759;">台達電、奇鋐受惠</span></div>
+      <!-- 1. 客戶與市場 -->
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">01</span>
+          <span class="deep-title">🎯 客戶與市���</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 今日重點 (2-3點)</div>
+          <div class="block-item"> GB200/Vera Rubin 全液冷方案正式發布，2026年滲透率從57%上看80%</div>
+          <div class="block-item"> 超大規模資料中心全面轉向液冷，Microsoft/Google/Meta 都已確認新規劃</div>
+          <div class="block-item"> 市場規模預測：2026年84.6億美元，2030年177億美元</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">🔍 影響判讀</div>
+          <div class="block-text">液冷從「選配」變「標配」，這不是技術升級而是產業結構轉變。未來沒有液冷能力的散熱廠將被排除在AI資料中心供應鏈外。</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 對我意義</div>
+          <div class="block-text">我的工作：需重新評估氣冷產品的生命周期。持股：台達電(2308)、奇鋐(3017)受惠。客戶應對：需掌握液冷技術論述能力。</div>
+        </div>
+        <div class="action-box">
+          <div class="action-title">⚡ 建議動作</div>
+          <div class="action-text">1. 追蹤散熱族群股價表現 2. 整理液冷vs氣冷對照表給內部開會用</div>
+        </div>
       </div>
       
       <!-- 2. 水冷發展 -->
-      <div class="bento-card" style="margin-bottom:12px;">
-        <div class="bento-label">2 💧 水冷發展</div>
-        <div class="tech-row"><span class="tech-label">技術</span><span class="tech-val">單相液冷/冷板主流</span></div>
-        <div class="tech-row"><span class="tech-label">GB200</span><span class="tech-val">120-130kW</span></div>
-        <div class="tech-row"><span class="tech-label">門檻</span><span class="tech-val" style="color:#ff9500;">提高</span></div>
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">02</span>
+          <span class="deep-title">💧 水冷發展</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 今日重點</div>
+          <div class="block-item"> NVIDIA Vera Rubin 支援45°C液冷入口溫度，較前代提升</div>
+          <div class="block-item"> GB200 NVL72 整機櫃功耗達120-130kW，需rack-level液冷</div>
+          <div class="block-item"> 單相直接液冷(DLC)仍是主流，浸没式散熱在超大規模開始導入</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">🔍 影響判讀</div>
+          <div class="block-text">散熱設計門檻大幅提高。過去氣冷經驗無法直接移轉。 cold plate、quick-disconnect、CDU等成為關鍵零組件。</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 對我意義</div>
+          <div class="block-text">對我方產品：需加速cold plate開發。對手：我落後了嗎？需確認奇鋐、富世達量產能力。</div>
+        </div>
+        <div class="action-box">
+          <div class="action-title">⚡ 建議動作</div>
+          <div class="action-text">1. 研究Vera Rubin散熱規格 2. 評估內部cold plate開發進度</div>
+        </div>
       </div>
       
-      <!-- 3. Networking -->
-      <div class="bento-card" style="margin-bottom:12px;">
-        <div class="bento-label">3 🌐 Networking / CPO</div>
-        <div class="tech-row"><span class="tech-label">趨勢</span><span class="tech-val">CPO/NPO光學整合</span></div>
-        <div class="tech-row"><span class="tech-label">熱挑戰</span><span class="tech-val" style="color:#ff9500;">光電熱耦合</span></div>
-        <div class="tech-row"><span class="tech-label">機會</span><span class="tech-val">新散熱方案需求</span></div>
+      <!-- 3. Networking / CPO -->
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">03</span>
+          <span class="deep-title">🌐 Networking / CPO</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 今日重點</div>
+          <div class="block-item"> CPO (Co-Packaged Optics) 從「概念」進入「樣機」階段</div>
+          <div class="block-item"> 光學與switch chip封裝靠近後，熱耦合成為新挑戰</div>
+          <div class="block-item"> 從pluggable→LPO→CPO演進，功耗密度持續上升</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">🔍 影響判讀</div>
+          <div class="block-text">這是後段網通的關鍵戰場。光學與電子散熱需整合設計，未來可能需要光學專用的散熱方案。</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 對我意義</div>
+          <div class="block-text">需關注：Broadcom、Cisco、Intel、NVIDIA的CPO進度。誰先量產誰主導標準。</div>
+        </div>
+        <div class="action-box">
+          <div class="action-title">⚡ 建議動作</div>
+          <div class="action-text">1. 研究CPO散熱架構 2. 追蹤Broadcom/Cisco CPO進度</div>
+        </div>
       </div>
       
       <!-- 4. 產品技術 -->
-      <div class="bento-card" style="margin-bottom:12px;">
-        <div class="bento-label">4 🛠️ 產品技術</div>
-        <div class="tech-row"><span class="tech-label">主流</span><span class="tech-val">單相液冷</span></div>
-        <div class="tech-row"><span class="tech-label">趨勢</span><span class="tech-val">cold plate標準化</span></div>
-        <div class="tech-row"><span class="tech-label">機會</span><span class="tech-val">台廠領先</span></div>
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">04</span>
+          <span class="deep-title">🛠️ 產品技術</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 今日重點</div>
+          <div class="block-item"> 3D VC、微流體散熱開始在高功耗晶片導入</div>
+          <div class="block-item"> cold plate標準化加速，各廠開始共通規格</div>
+          <div class="block-item"> 混合式散熱(氣冷+液冷)成為過渡方案主流</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">🔍 影響判讀</div>
+          <div class="block-text">技術迭代速度加快。不能再只靠單一技術，需有「解決方案庫」應對不同客戶需求。</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 對我意義</div>
+          <div class="block-text">是否值得納入研發：3D VC有技術門檻但毛利高。混合散熱可能是我方機會。</div>
+        </div>
+        <div class="action-box">
+          <div class="action-title">⚡ 建議動作</div>
+          <div class="action-text">1. 評估3D VC技術可行性 2. 整理技術矩陣圖</div>
+        </div>
       </div>
       
       <!-- 5. 衛星散熱 -->
-      <div class="bento-card" style="margin-bottom:12px;">
-        <div class="bento-label">5 🛰️ 衛星散熱</div>
-        <div class="tech-row"><span class="tech-label">市場</span><span class="tech-val">LEO/smallsat興起</span></div>
-        <div class="tech-row"><span class="tech-label">熱控</span><span class="tech-val">被動散熱/輻射</span></div>
-        <div class="tech-row"><span class="tech-label">機會</span><span class="tech-val" style="color:#007aff;">新興需求待開發</span></div>
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">05</span>
+          <span class="deep-title">🛰️ 衛星散熱</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 今日重點</div>
+          <div class="block-item"> LEO (低軌衛星) 數量持續爆發，Starlink、OneWeb擴張中</div>
+          <div class="block-item"> SmallSat (<500kg) 成本下降，商業應用興起</div>
+          <div class="block-item"> 被動散熱、輻射散熱仍為主方案，但需求提升中</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">🔍 影響判讀</div>
+          <div class="block-text">太空環境熱控與地面截然不同。被動散熱要求、材料耐輻射、體積重量限制是挑戰。這是目前少人競爭的藍海。</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 對我意義</div>
+          <div class="block-text">是否納入中長期關注：是。可以觀察，但不急著動作。等市場更明確再進入。</div>
+        </div>
+        <div class="action-box">
+          <div class="action-title">⚡ 建議動作</div>
+          <div class="action-text">1. 持續觀察就好 2. 不需要現在投入資源</div>
+        </div>
       </div>
       
       <!-- 6. Edge/AI PC -->
-      <div class="bento-card" style="margin-bottom:12px;">
-        <div class="bento-label">6 🤖 Edge/AI PC</div>
-        <div class="tech-row"><span class="tech-label">趨勢</span><span class="tech-val">NPU本地推理</span></div>
-        <div class="tech-row"><span class="tech-label">散熱</span><span class="tech-val">靜音/無風扇需求</span></div>
-        <div class="tech-row"><span class="tech-label">平台</span><span class="tech-val">Intel NPU/AMD Ryzen AI</span></div>
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">06</span>
+          <span class="deep-title">🤖 Edge / AI PC</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 今日重點</div>
+          <div class="block-item"> Agentic AI崛起，NPU本地推理變成標準規格</div>
+          <div class="block-item"> Intel NPU、AMD Ryzen AI、NVIDIA Jetson都有新進展</div>
+          <div class="block-item"> 靜音、無風扇、小型化散熱需求浮現</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">🔍 影響判讀</div>
+          <div class="block-text">這是「mini PC / edge device」的新戰場。過去用氣風扇，未來可能用 heat pipe、VC、甚至小型液冷。</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 對我意義</div>
+          <div class="block-text">值得追蹤的平台：Intel NPU、AMD XDNA、NVIDIA Jetson。可能的新應用場景：企業代理、工業控制、安防。</div>
+        </div>
+        <div class="action-box">
+          <div class="action-title">⚡ 建議動作</div>
+          <div class="action-text">1. 追蹤 Intel NPU / AMD Ryzen AI 發展 2. 研究邊緣散熱方案</div>
+        </div>
       </div>
       
-      <!-- 7. 對手 -->
-      <div class="bento-card">
-        <div class="bento-label">7 🏢 對手動態</div>
-        <div class="tech-row"><span class="tech-label">台達電</span><span class="tech-val">液冷題材支撐</span></div>
-        <div class="tech-row"><span class="tech-label">奇鋐</span><span class="tech-val">下半年擴產</span></div>
-        <div class="tech-row"><span class="tech-label">中國</span><span class="tech-val" style="color:#ff9500;">積極擴產</span></div>
+      <!-- 7. 對手動態 -->
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">07</span>
+          <span class="deep-title">🏢 對手動態</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 今日重點</div>
+          <div class="block-item"> 台達電(2308)：液冷水冷題材支撐，股價相對強勢</div>
+          <div class="block-item"> 奇鋐(3017)：下半年擴產，預期液冷營收占比提升</div>
+          <div class="block-item"> 中國散熱模組廠積極擴產中</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">🔍 影響判讀</div>
+          <div class="block-text">台灣散熱族群領先。中國廠低價競爭但技術落後。需注意技術差異化。</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 對我意義</div>
+          <div class="block-text">威脅：中國低價競爭。可學習��奇��的擴產節奏。建議：我方需保持技術領先。</div>
+        </div>
+        <div class="action-box">
+          <div class="action-title">⚡ 建議動作</div>
+          <div class="action-text">1. 追蹤對手新產品 2. 關注中國擴產進度</div>
+        </div>
       </div>
     </div>
     
-    <!-- Personal -->
+    <!-- 個人相關 -->
     <div class="section">
       <div class="section-header">
         <span class="section-badge" style="background:#34C759;">B</span>
         <span class="section-title">個人相關</span>
       </div>
       
-      <div class="bento-card" style="margin-bottom:12px;">
-        <div class="bento-label">💰 持股</div>
-        <div class="stock-row"><span class="stock-name">2308 台達電</span><div><span class="stock-price">1,510</span><span class="stock-change tag-up">+0.33%</span></div></div>
-        <div class="stock-row"><span class="stock-name">2408 南亞科</span><div><span class="stock-price">219.5</span><span class="stock-change tag-down">-2.66%</span></div></div>
-        <div class="stock-row"><span class="stock-name">BTC</span><div><span class="stock-price">$66,700</span><span class="stock-change tag-down">-2.3%</span></div></div>
+      <!-- 持股 -->
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">01</span>
+          <span class="deep-title">💰 持股與產業</span>
+        </div>
+        
+        <div class="block-item" style="margin-bottom:12px;">
+          <strong>2308 台達電</strong> <span class="tag-up">+0.33%</span> <span class="tag-long">中長線偏多</span>
+          <div style="font-size:12px;color:#636366;margin-top:4px;">1,510元。液冷題材支撐，伺服器營收占比提升中。技術面：站穩月線，量價配合健康。</div>
+        </div>
+        
+        <div class="block-item" style="margin-bottom:12px;">
+          <strong>2408 南亞科</strong> <span class="tag-down">-2.66%</span> <span class="tag-short">短線偏空</span>
+          <div style="font-size:12px;color:#636366;margin-top:4px;">219.5元。記憶體景氣放緩，DRAM價格壓力。技術面：跌破月線，若跌破215需考慮停損。</div>
+        </div>
+        
+        <div class="block-item">
+          <strong>BTC 比特幣</strong> <span class="tag-down">-2.3%</span> <span class="tag-neutral">觀望</span>
+          <div style="font-size:12px;color:#636366;margin-top:4px;">~$66,700。區間整理中。中長線持有為主，短期波動大。</div>
+        </div>
+        
+        <div class="action-box">
+          <div class="action-title">⚡ 持股策略建議</div>
+          <div class="action-text">2308：偏多持有，逢低可加。2408：短線保守，設215停損。BTC：中長線持有。</div>
+        </div>
       </div>
       
-      <div class="bento-card">
-        <div class="bento-label">📅 今日行程</div>
-        <div class="tech-row"><span class="tech-label">狀態</span><span class="tech-val">無預定行程</span></div>
+      <!-- 行程 -->
+      <div class="deep-module">
+        <div class="deep-header">
+          <span class="deep-num">02</span>
+          <span class="deep-title">📅 今日行程</span>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">📌 現況</div>
+          <div class="block-text" style="margin-bottom:12px;">今日無既定會議</div>
+        </div>
+        <div class="deep-block">
+          <div class="block-label">💡 建議安排</div>
+          <div class="block-item"> 產業趨勢研究：整理液冷 vs 氣冷對照簡報</div>
+          <div class="block-item"> 持股檢視：評估2408是否該減碼</div>
+          <div class="block-item"> 客戶資料更新：追蹤NVIDIA Vera Rubin 最新資訊</div>
+        </div>
       </div>
     </div>
     
@@ -208,9 +338,18 @@
         <span class="section-title">今日行動</span>
       </div>
       <div class="action-card">
-        <div class="action-item"><span class="action-icon action-green">▶</span><span class="action-text">追蹤散熱族群股價，逢低布局</span></div>
-        <div class="action-item"><span class="action-icon action-blue">↻</span><span class="action-text">關注NVIDIA Vera Rubin量產時程</span></div>
-        <div class="action-item"><span class="action-icon action-yellow">◎</span><span class="action-text">研究CPO散熱新技術</span></div>
+        <div class="action-item">
+          <span class="action-dot dot-green"></span>
+          <span class="action-text"><strong>立即行動：</strong>追蹤散熱族群股價表現，逢低布局台達電/奇鋐</span>
+        </div>
+        <div class="action-item">
+          <span class="action-dot dot-blue"></span>
+          <span class="action-text"><strong>持續追蹤：</strong>CPO散熱技術研究 + NVIDIA Vera Rubin量產時程</span>
+        </div>
+        <div class="action-item">
+          <span class="action-dot dot-yellow"></span>
+          <span class="action-text"><strong>先觀察：</strong>2408若跌破215考慮停損 + 中國對手擴產進度</span>
+        </div>
       </div>
     </div>
     
@@ -218,6 +357,7 @@
       🤖 by Jarvis · 更新於 2026-03-29 08:00<br>
       <a href="https://jarvismart1980.github.io/jarvismart.github.io/">🔗 網頁版</a>
     </div>
+    
   </div>
 </body>
 </html>
