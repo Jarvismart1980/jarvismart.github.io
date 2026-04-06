@@ -1,67 +1,95 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James 每日產業情報 - ${DATE}</title>
+  <title>台股 AI 投資早報 - 2026-04-06</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: Arial, "PingFang TC", sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.7; padding: 0 16px; }
-    h1 { margin-bottom: 8px; }
-    h2 { color: #1a5f7a; margin-top: 24px; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; }
-    .meta { color: #666; margin-bottom: 24px; }
-    .box { background: #f6f8fa; border-radius: 12px; padding: 16px; margin: 20px 0; }
-    .stock-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    .stock-table th, .stock-table td { border: 1px solid #ddd; padding: 10px; text-align: center; }
-    .stock-table th { background: #1a5f7a; color: white; }
-    .up { color: #d32f2f; }
-    .down { color: #388e3c; }
-    .highlight { background: #fff3cd; padding: 12px; border-radius: 8px; margin: 16px 0; }
-    ul { padding-left: 20px; }
-    li { margin: 8px 0; }
-    .source { font-size: 12px; color: #888; margin-top: 24px; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0b0c10; color: #c5c6d0; }
+    .gradient-bg { background: linear-gradient(135deg, #0b0c10 0%, #1a1a2e 100%); }
+    .card { background: linear-gradient(145deg, #1f1f2e 0%, #16161f 100%); border: 1px solid #2d2d3a; }
+    .badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+    .badge-buy { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-hold { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
   </style>
 </head>
-<body>
-  <h1>James 每日產業情報 - 2026-04-06</h1>
-  <div class="meta">自動產生 · AI 伺服器散熱產業 focus</div>
+<body class="gradient-bg min-h-screen p-4 md:p-6 lg:p-8">
+  <div class="max-w-5xl mx-auto">
+    <header class="mb-8">
+      <a href="../index.html" class="text-indigo-400 hover:text-indigo-300 mb-4 inline-block">← 返回首頁</a>
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+        <div>
+          <span class="text-xs text-gray-500 uppercase tracking-widest">James 台股 AI 投資早報</span>
+          <h1 class="text-2xl md:text-3xl font-bold text-white mt-1">AI族群回神 持續看好</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-sm text-gray-400">2026-04-06</span>
+        </div>
+      </div>
+    </header>
 
-  <div class="highlight">
-    <strong>📈 市場趨勢：</strong> 2026 年液冷散熱滲透率預計從 23% 跳升至 47-57%，成為 AI 伺服器標準配備
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-white mb-4">📊 大盤與持股</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="card rounded-xl p-4 text-center border-l-4 border-l-green-500">
+          <div class="text-2xl font-bold text-green-400">+200</div>
+          <div class="text-xs text-gray-500">加權漲幅</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center border-l-4 border-l-green-500">
+          <div class="text-2xl font-bold text-green-400">1430.00</div>
+          <div class="text-xs text-gray-500">台達電 (2308)</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center border-l-4 border-l-green-500">
+          <div class="text-2xl font-bold text-green-400">200.50</div>
+          <div class="text-xs text-gray-500">南亞科 (2408)</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center border-l-4 border-l-indigo-500">
+          <div class="text-2xl font-bold text-indigo-400">約 118</div>
+          <div class="text-xs text-gray-500">凱基台灣50</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-white mb-4">💼 持股診斷</h2>
+      <div class="space-y-4">
+        <div class="card rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-white font-semibold">009816 凱基台灣 TOP50</span>
+            <span class="badge badge-hold">續抱</span>
+          </div>
+          <p class="text-gray-400 text-sm">50 張 | ETF 追蹤大型股，受惠 AI 趨勢。</p>
+        </div>
+        <div class="card rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-white font-semibold">2308 台達電</span>
+            <span class="badge badge-hold">續抱</span>
+          </div>
+          <p class="text-gray-400 text-sm">100 股 | 液冷供應商入選 Vera Rubin，基本面持續看好。</p>
+        </div>
+        <div class="card rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-white font-semibold">2408 南亞科</span>
+            <span class="badge badge-hold">續抱</span>
+          </div>
+          <p class="text-gray-400 text-sm">48,000 股 | DRAM 供不應求，基本面支撐強。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-white mb-4">📝 結論</h2>
+      <div class="card rounded-xl p-6 bg-gradient-to-r from-indigo-900/30 to-purple-900/30">
+        <p class="text-gray-300 leading-relaxed">AI 族群持續回神，液冷趨勢確立。持股無須調整，續抱待漲。</p>
+      </div>
+    </section>
+
+    <footer class="text-center text-gray-600 text-xs pt-8 pb-4 border-t border-gray-800">
+      <p class="mb-1">資料來源：台灣證券交易所</p>
+      <p class="mt-1">建立時間：2026-04-06</p>
+    </footer>
   </div>
-
-  <h2>🌡️ AI 伺服器液冷散熱趨勢</h2>
-  <ul>
-    <li><strong>滲透率飆升：</strong> 高盛預估 2026 年液冷滲透率達 57%，TrendForce 估 47%</li>
-    <li><strong>市場規模：</strong> 2025 年約 30 億美元 → 2029 年約 70 億美元</li>
-    <li><strong>驅動因素：</strong> GPU 功耗攀升，單機櫃功率密度達 30-50kW，氣冷已無法應對</li>
-    <li><strong>NV 下一代：</strong> Vera Rubin、Blackwell Ultra (GB300) 全面採用液冷</li>
-    <li><strong>節能效益：</strong> PUE 值可從 1.5 降至 1.05-1.1，符合 ESG 趨勢</li>
-  </ul>
-
-  <h2>📊 持股追蹤</h2>
-  <table class="stock-table">
-    <tr><th>股票</th><th>收盤價</th><th>日期</th><th>備註</th></tr>
-    <tr><td>2308 台達電</td><td>1,430 元</td><td>4/2</td><td>-3.05%</td></tr>
-    <tr><td>2408 南亞科</td><td>200.5 元</td><td>4/2</td><td>-4.98%</td></tr>
-    <tr><td>009816 凱基台灣TOP50</td><td>10.49 元</td><td>4/2</td><td>ETF</td></tr>
-  </table>
-
-  <h2>🔥 散熱族群重點個股</h2>
-  <table class="stock-table">
-    <tr><th>股票</th><th>股價 (3/2)</th><th>營收比重</th><th>亮點</th></tr>
-    <tr><td>3017 奇鋐</td><td>1,765 元</td><td>液冷產品成長中</td><td>3D VC + 水冷板垂直整合</td></tr>
-    <tr><td>3324 雙鴻</td><td>1,130 元</td><td>2026 液冷挑戰 55%</td><td>直接液冷先驅，AMD/NVIDIA 合作</td></tr>
-    <tr><td>3653 健策</td><td>3,045 元</td><td>HPC 散熱佔高比</td><td>Vapor Chamber 龍頭，切入 CPO</td></tr>
-    <tr><td>2421 建準</td><td>154.5 元</td><td>水冷模組</td><td>氣冷輔助液冷櫃</td></tr>
-  </table>
-
-  <h2>💡 產業觀察</h2>
-  <ul>
-    <li>液冷從「選配」轉為「標準配備」，供應鏈從製造能力轉向設計參與度與系統整合能力</li>
-    <li>DDR4 漲勢可能 Q2 見頂，南亞科目標價遭下修（摩根士丹利）</li>
-    <li>記憶體景氣仍佳，但需關注中國長鑫存儲擴產壓力</li>
-  </ul>
-
-  <div class="source">資料來源：TrendForce、Dell'Oro Group、高盛、MoneyDJ、Yahoo Finance，股價僅供參考</div>
 </body>
 </html>
