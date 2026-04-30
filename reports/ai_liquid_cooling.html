@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Liquid Cooling Solution — Delta 液冷簡報</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0b0c10; color: #c5c6d0; }
+    .gradient-bg { background: linear-gradient(135deg, #0b0c10 0%, #1a1a2e 100%); }
+    .card { background: linear-gradient(145deg, #1f1f2e 0%, #16161f 100%); border: 1px solid #2d2d3a; }
+    .section-num { font-size: 5rem; font-weight: 700; color: #2d2d3a; line-height: 1; }
+    .highlight { color: #818cf8; }
+    .green { color: #34d399; }
+    .yellow { color: #fbbf24; }
+    .red { color: #f87171; }
+    .purple { color: #a78bfa; }
+    .page-break { page-break-after: always; }
+    @media print {
+      .page-break { page-break-after: always; }
+      body { background: white; color: black; }
+      .card { background: #f6f8fa; border: 1px solid #d0d7de; }
+      .gradient-bg { background: white; }
+    }
+  </style>
+</head>
+<body class="gradient-bg min-h-screen p-6 md:p-8">
+
+  <!-- Cover -->
+  <div class="max-w-5xl mx-auto min-h-[90vh] flex flex-col justify-center items-center text-center">
+    <div class="mb-8">
+      <span class="text-xs text-gray-500 uppercase tracking-widest">Delta Electronics</span>
+    </div>
+    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">AI 伺服器液冷解決方案</h1>
+    <p class="text-xl md:text-2xl text-gray-400 mb-4">Delta AI Liquid Cooling — 賦能未來資料中心</p>
+    <p class="text-lg text-indigo-400 mb-12">從晶片到 Rack Level 的全場景覆蓋</p>
+    <div class="text-sm text-gray-600 mt-12">
+      <p>2026 產業簡報</p>
+    </div>
+    <div class="mt-8">
+      <a href="index.html" class="text-indigo-400 hover:text-indigo-300 text-sm">← 返回首頁</a>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 2: Market Drivers -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">02</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">Market Drivers</span>
+        <h2 class="text-3xl font-bold text-white">為什麼 AI 伺服器非液冷不可？</h2>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mb-8">
+      <p class="text-xl text-gray-300 leading-relaxed mb-6">
+        <span class="highlight font-semibold">晶片功耗飆升</span>，風冷已達物理瓶頸
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-white font-semibold mb-3">功率密度趨勢</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="green">•</span> AI chip 功耗：400W → 1,200W（GB200）</li>
+            <li class="flex gap-3"><span class="green">•</span> 風冷散熱极限：約 700W/chip</li>
+            <li class="flex gap-3"><span class="green">•</span> NVIDIA Vera Rubin：100% 全液冷設計</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-3">市場數據</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="yellow">•</span> 2026 年液冷滲透率預估達 <strong class="text-yellow-400">76%</strong></li>
+            <li class="flex gap-3"><span class="yellow">•</span> 從選配變成標準配置</li>
+            <li class="flex gap-3"><span class="yellow">•</span> 45°C 熱水接受度技術已成熟</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8">
+      <h3 class="text-white font-semibold mb-4">AI Chip 功耗 vs 散熱能力演進</h3>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <span class="text-gray-500 w-20 text-sm">2018</span>
+          <div class="flex-1 bg-gray-700 rounded-full h-6">
+            <div class="bg-green-500 h-6 rounded-full" style="width: 30%"></div>
+          </div>
+          <span class="text-green-400 text-sm w-24">~200W (風冷OK)</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-gray-500 w-20 text-sm">2022</span>
+          <div class="flex-1 bg-gray-700 rounded-full h-6">
+            <div class="bg-yellow-500 h-6 rounded-full" style="width: 55%"></div>
+          </div>
+          <span class="text-yellow-400 text-sm w-24">~400W (臨界)</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-gray-500 w-20 text-sm">2024</span>
+          <div class="flex-1 bg-gray-700 rounded-full h-6">
+            <div class="bg-orange-500 h-6 rounded-full" style="width: 75%"></div>
+          </div>
+          <span class="text-orange-400 text-sm w-24">~700W (風冷极限)</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-gray-500 w-20 text-sm">2026</span>
+          <div class="flex-1 bg-gray-700 rounded-full h-6">
+            <div class="bg-red-500 h-6 rounded-full" style="width: 95%"></div>
+          </div>
+          <span class="text-red-400 text-sm w-24">~1,200W (液冷必選)</span>
+        </div>
+      </div>
+      <p class="text-gray-500 text-sm mt-4">* NVIDIA GB200 NVL72 / Vera Rubin 系列</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 3: Pain Points -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">03</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">Challenges</span>
+        <h2 class="text-3xl font-bold text-white">傳統散熱方案的四大瓶頸</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div class="card rounded-2xl p-6 border-l-4 border-l-red-500">
+        <div class="text-3xl mb-3">🔥</div>
+        <h3 class="text-white font-semibold mb-2">熱點集中化</h3>
+        <p class="text-gray-400 text-sm">AI chip 熱密度超過 100W/cm²，局部過熱導致效能降頻，散熱不均成為效能瓶頸</p>
+      </div>
+      <div class="card rounded-2xl p-6 border-l-4 border-l-orange-500">
+        <div class="text-3xl mb-3">📦</div>
+        <h3 class="text-white font-semibold mb-2">機房空間</h3>
+        <p class="text-gray-400 text-sm">風扇 + 散熱器佔用大量 U 位，限制伺服器擴充密度，每瓦算力成本上升</p>
+      </div>
+      <div class="card rounded-2xl p-6 border-l-4 border-l-yellow-500">
+        <div class="text-3xl mb-3">⚡</div>
+        <h3 class="text-white font-semibold mb-2">能耗黑洞</h3>
+        <p class="text-gray-400 text-sm">風冷資料中心 PUE 約 1.4-1.6，散熱所消耗電力佔總營運成本 30-40%</p>
+      </div>
+      <div class="card rounded-2xl p-6 border-l-4 border-l-purple-500">
+        <div class="text-3xl mb-3">📈</div>
+        <h3 class="text-white font-semibold mb-2">擴展性不足</h3>
+        <p class="text-gray-400 text-sm">AI cluster 由數百至數萬 GPU，風冷架構難以線性擴展，硬體設計需全部重新考量</p>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8">
+      <h3 class="text-white font-semibold mb-4 text-center">風冷 vs 液冷 — 關鍵指標比較</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-gray-400 border-b border-gray-700">
+              <th class="text-left py-3 px-4">指標</th>
+              <th class="text-center py-3 px-4">風冷</th>
+              <th class="text-center py-3 px-4">液冷</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-300">
+            <tr class="border-b border-gray-800">
+              <td class="py-3 px-4">散熱密度</td>
+              <td class="text-center py-3 px-4 text-red-400">★☆☆</td>
+              <td class="text-center py-3 px-4 text-green-400">★★★★★</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-3 px-4">PUE</td>
+              <td class="text-center py-3 px-4 text-red-400">1.4 - 1.6</td>
+              <td class="text-center py-3 px-4 text-green-400">1.05 - 1.15</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-3 px-4">晶片均溫性</td>
+              <td class="text-center py-3 px-4 text-red-400">★☆☆</td>
+              <td class="text-center py-3 px-4 text-green-400">★★★★★</td>
+            </tr>
+            <tr class="border-b border-gray-800">
+              <td class="py-3 px-4">系統複雜度</td>
+              <td class="text-center py-3 px-4 text-green-400">低</td>
+              <td class="text-center py-3 px-4 text-yellow-400">中</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4">維護成本</td>
+              <td class="text-center py-3 px-4 text-green-400">低</td>
+              <td class="text-center py-3 px-4 text-yellow-400">中</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 4: Delta Portfolio -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">04</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">Portfolio</span>
+        <h2 class="text-3xl font-bold text-white">Delta 液冷方案總覽</h2>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mb-8 border-l-4 border-l-indigo-500">
+      <p class="text-xl text-gray-300 mb-6">
+        <span class="highlight font-semibold">One-Phase + Two-Phase 雙軌並進</span>，覆蓋所有 AI 應用場景
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card rounded-xl p-5">
+        <div class="text-2xl mb-3">💧</div>
+        <h3 class="text-white font-semibold mb-2">CDU <span class="text-gray-500 text-sm font-normal">(冷卻分配單元)</span></h3>
+        <p class="text-gray-400 text-sm">Rack Level 液冷心臟，支援 40-50°C 熱水輸出，智能流量調配</p>
+      </div>
+      <div class="card rounded-xl p-5">
+        <div class="text-2xl mb-3">❄️</div>
+        <h3 class="text-white font-semibold mb-2">Cold Plate <span class="text-gray-500 text-sm font-normal">(冷板)</span></h3>
+        <p class="text-gray-400 text-sm">GPU/CPU 直接接觸散熱，已通過 Vera Rubin 認證</p>
+      </div>
+      <div class="card rounded-xl p-5">
+        <div class="text-2xl mb-3">🔀</div>
+        <h3 class="text-white font-semibold mb-2">Manifold <span class="text-gray-500 text-sm font-normal">(分歧管)</span></h3>
+        <p class="text-gray-400 text-sm">彈性布管設計，支援擴充與熱維護，模組化快速部署</p>
+      </div>
+      <div class="card rounded-xl p-5 border-l-4 border-l-purple-400">
+        <div class="text-2xl mb-3">⚡</div>
+        <h3 class="text-white font-semibold mb-2">Two-Phase System</h3>
+        <p class="text-gray-400 text-sm">超高功率密度專用，支援 1kW+ 單晶片，汽化潛熱極限散熱</p>
+      </div>
+      <div class="card rounded-xl p-5">
+        <div class="text-2xl mb-3">📊</div>
+        <h3 class="text-white font-semibold mb-2">監控系統</h3>
+        <p class="text-gray-400 text-sm">數位孿生即時溫度、流量、洩漏偵測，預測性維護</p>
+      </div>
+      <div class="card rounded-xl p-5">
+        <div class="text-2xl mb-3">🔌</div>
+        <h3 class="text-white font-semibold mb-2">AI Power <span class="text-gray-500 text-sm font-normal">(AI 電源)</span></h3>
+        <p class="text-gray-400 text-sm">Delta 全球第一 AI 電源供應器，散熱 + 電源整合方案</p>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mt-6">
+      <h3 class="text-white font-semibold mb-4 text-center">Delta 液冷系統架構圖</h3>
+      <div class="flex flex-col items-center gap-4">
+        <div class="card rounded-lg px-8 py-4 bg-indigo-900/30 border-indigo-500">
+          <p class="text-indigo-300 font-semibold text-center">CDU (Cooling Distribution Unit)</p>
+          <p class="text-gray-400 text-xs text-center">40-50°C 熱水輸出</p>
+        </div>
+        <div class="text-gray-500">↓</div>
+        <div class="card rounded-lg px-8 py-4 bg-purple-900/30 border-purple-500">
+          <p class="text-purple-300 font-semibold text-center">Manifold (分歧管)</p>
+          <p class="text-gray-400 text-xs text-center">彈性分流至各 Rack</p>
+        </div>
+        <div class="text-gray-500">↓</div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="card rounded-lg px-6 py-4 bg-blue-900/30 border-blue-500">
+            <p class="text-blue-300 font-semibold text-center">Rack 1</p>
+            <p class="text-gray-400 text-xs text-center">Cold Plate × 8</p>
+          </div>
+          <div class="card rounded-lg px-6 py-4 bg-blue-900/30 border-blue-500">
+            <p class="text-blue-300 font-semibold text-center">Rack 2</p>
+            <p class="text-gray-400 text-xs text-center">Cold Plate × 8</p>
+          </div>
+        </div>
+        <div class="text-gray-500">↓</div>
+        <div class="card rounded-lg px-8 py-3 bg-gray-800/50 border-gray-600">
+          <p class="text-gray-400 text-xs text-center">GPU / CPU Chips — 熱量經冷板帶走 → CDU 散熱循環</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 5: One-Phase -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">05</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">One-Phase</span>
+        <h2 class="text-3xl font-bold text-white">One-Phase Liquid Cooling</h2>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mb-6 border-l-4 border-l-green-500">
+      <p class="text-xl text-green-400 font-semibold mb-4">性價比首選 — 成熟可靠、無縫接軌</p>
+      <p class="text-gray-300">液體在散熱過程中保持液態，熱量透過液體流動帶走，溫度上升但不移過沸點</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div class="card rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-4">✓ 優點</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>• 系統可靠、故障率低</li>
+          <li>• 成本低、供應鏈成熟</li>
+          <li>• 與既有資料中心基礎設施完全相容</li>
+          <li>• 維護技術門檻低</li>
+          <li>• 已通過 NVIDIA GB200 系列認證</li>
+        </ul>
+      </div>
+      <div class="card rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-4">✗ 限制</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>• 熱傳密度受限於液體比熱</li>
+          <li>• 熱點均溫效果較差</li>
+          <li>• 進出口溫差較大</li>
+          <li>• 不適合 800W+ 超高功率密度</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mb-6">
+      <h3 class="text-white font-semibold mb-4">應用場景</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-gray-800/50 rounded-lg">
+          <p class="text-green-400 font-semibold">HPC</p>
+          <p class="text-gray-500 text-xs">高效能運算</p>
+        </div>
+        <div class="text-center p-4 bg-gray-800/50 rounded-lg">
+          <p class="text-green-400 font-semibold">AI Inference</p>
+          <p class="text-gray-500 text-xs">推論應用</p>
+        </div>
+        <div class="text-center p-4 bg-gray-800/50 rounded-lg">
+          <p class="text-green-400 font-semibold">Edge AI</p>
+          <p class="text-gray-500 text-xs">邊緣運算</p>
+        </div>
+        <div class="text-center p-4 bg-gray-800/50 rounded-lg">
+          <p class="text-green-400 font-semibold">GB200 NVL36</p>
+          <p class="text-gray-500 text-xs">主流 AI Rack</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rounded-xl p-6 bg-gray-900/50">
+      <h3 class="text-white font-semibold mb-3 text-sm">散熱原理示意</h3>
+      <div class="flex items-center justify-center gap-2 text-gray-400 text-sm">
+        <div class="px-4 py-2 bg-blue-900/30 rounded border border-blue-500">GPU Chip</div>
+        <span class="text-gray-500">→</span>
+        <div class="px-4 py-2 bg-cyan-900/30 rounded border border-cyan-500">Cold Plate</div>
+        <span class="text-gray-500">→</span>
+        <div class="px-4 py-2 bg-blue-900/30 rounded border border-blue-500">冷卻液循環</div>
+        <span class="text-gray-500">→</span>
+        <div class="px-4 py-2 bg-gray-700/50 rounded border border-gray-600">CDU (熱交換)</div>
+      </div>
+      <p class="text-gray-500 text-xs mt-3 text-center">熱量透過液體流動（顯熱）带離晶片，液體溫度升高但不沸騰</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 6: Two-Phase -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">06</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">Two-Phase</span>
+        <h2 class="text-3xl font-bold text-white">Two-Phase Liquid Cooling</h2>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mb-6 border-l-4 border-l-purple-500">
+      <p class="text-xl text-purple-400 font-semibold mb-4">超高密度未來 — 汽化潛熱突破散熱瓶頸</p>
+      <p class="text-gray-300">冷卻液在吸收熱量後沸騰汽化，相變過程大量吸收熱量，再由冷凝端將蒸汽變回液態循環</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div class="card rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-4">✓ 優點</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>• 熱傳密度是 One-Phase 的 <strong class="text-purple-400">5-10 倍</strong></li>
+          <li>• 等溫散熱，晶片熱點均溫性極佳</li>
+          <li>• 支援 Vera Rubin 45°C 熱水需求</li>
+          <li>• 簡化後端 Cooling Tower 設計</li>
+          <li>• 適合 1kW+ 超高功率密度</li>
+        </ul>
+      </div>
+      <div class="card rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-4">✗ 限制</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>• 系統複雜，汽化管理要求高</li>
+          <li>• 微量洩漏會導致沸騰失效</li>
+          <li>• 成本高，封閉式系統維護難</li>
+          <li>• 認證週期長</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mb-6">
+      <h3 class="text-white font-semibold mb-4">One-Phase vs Two-Phase 熱傳效率對比</h3>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <span class="text-gray-400 w-32 text-sm">One-Phase</span>
+          <div class="flex-1 bg-gray-700 rounded-full h-8">
+            <div class="bg-green-500 h-8 rounded-full flex items-center px-3" style="width: 20%">
+              <span class="text-white text-xs font-semibold">20%</span>
+            </div>
+          </div>
+          <span class="text-gray-500 text-sm w-40">顯熱散熱</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-gray-400 w-32 text-sm">Two-Phase</span>
+          <div class="flex-1 bg-gray-700 rounded-full h-8">
+            <div class="bg-purple-500 h-8 rounded-full flex items-center px-3" style="width: 100%">
+              <span class="text-white text-xs font-semibold">100%</span>
+            </div>
+          </div>
+          <span class="text-gray-500 text-sm w-40">汽化潛熱（~25x）</span>
+        </div>
+      </div>
+      <p class="text-gray-500 text-xs mt-4">* 相同流量下 Two-Phase 熱傳能力約為 One-Phase 的 5-10 倍</p>
+    </div>
+
+    <div class="card rounded-xl p-6">
+      <h3 class="text-white font-semibold mb-3 text-sm">應用場景</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="text-center p-4 bg-purple-900/20 rounded-lg">
+          <p class="text-purple-400 font-semibold">AI Training</p>
+          <p class="text-gray-500 text-xs">萬卡叢集</p>
+        </div>
+        <div class="text-center p-4 bg-purple-900/20 rounded-lg">
+          <p class="text-purple-400 font-semibold">Vera Rubin</p>
+          <p class="text-gray-500 text-xs">Q3/Q4 放量</p>
+        </div>
+        <div class="text-center p-4 bg-purple-900/20 rounded-lg">
+          <p class="text-purple-400 font-semibold">HPC 超算</p>
+          <p class="text-gray-500 text-xs">百萬瓦級散熱</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 7: Competitive Analysis -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">07</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">Competitive</span>
+        <h2 class="text-3xl font-bold text-white">為什麼選擇 Delta？</h2>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 mb-6 border-l-4 border-l-indigo-500">
+      <p class="text-xl text-gray-300">
+        全球唯一同時具備 <span class="highlight font-semibold">AI 電源 + 液冷</span> 整合能力的供應商
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div class="card rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-4">Delta 核心優勢</h3>
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li class="flex gap-3"><span class="green">✓</span> <strong class="text-white">電源 + 散熱唯一整合者</strong><br><span class="text-gray-500 ml-6">少數同時供應 AI 電源供應器 + 液冷產品</span></li>
+          <li class="flex gap-3"><span class="green">✓</span> <strong class="text-white">在地化服務</strong><br><span class="text-gray-500 ml-6">台灣/美國/歐洲皆有據點</span></li>
+          <li class="flex gap-3"><span class="green">✓</span> <strong class="text-white">Vera Rubin 認證</strong><br><span class="text-gray-500 ml-6">已入選冷板供應商名單</span></li>
+          <li class="flex gap-3"><span class="green">✓</span> <strong class="text-white">AI 電源全球第一</strong><br><span class="text-gray-500 ml-6">市佔率 60%+</span></li>
+        </ul>
+      </div>
+      <div class="card rounded-xl p-6">
+        <h3 class="text-white font-semibold mb-4">競爭對手比較</h3>
+        <div class="space-y-4">
+          <div class="border-b border-gray-700 pb-3">
+            <p class="text-yellow-400 font-semibold text-sm">奇鋐（川虹）/ AVC</p>
+            <p class="text-gray-500 text-xs">液冷產品線完整，但無電源整合能力，中階市場為主</p>
+          </div>
+          <div class="border-b border-gray-700 pb-3">
+            <p class="text-orange-400 font-semibold text-sm">AMAX / 安渤</p>
+            <p class="text-gray-500 text-xs">規模大但在高階 Two-Phase 落後，價格導向</p>
+          </div>
+          <div class="border-b border-gray-700 pb-3">
+            <p class="text-red-400 font-semibold text-sm">中國供應商</p>
+            <p class="text-gray-500 text-xs">價格優，但國際認證與服務不足，散熱整合能力有限</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-6">
+      <h3 class="text-white font-semibold mb-4 text-center">競爭矩陣</h3>
+      <div class="relative h-64 bg-gray-900/50 rounded-xl p-4">
+        <div class="absolute inset-0 flex items-center justify-center text-gray-600 text-xs">技術能力 →</div>
+        <div class="absolute left-2 top-1/2 -rotate-90 transform -translate-x-1/2 text-gray-600 text-xs" style="transform: translateX(-50%) rotate(-90deg);">服務能力 →</div>
+        <div class="absolute top-8 left-8 w-16 h-16 bg-red-500/20 border border-red-500/50 rounded-lg flex items-center justify-center">
+          <span class="text-red-400 text-xs">中國</span>
+        </div>
+        <div class="absolute top-8 right-8 w-16 h-16 bg-orange-500/20 border border-orange-500/50 rounded-lg flex items-center justify-center">
+          <span class="text-orange-400 text-xs">AVC</span>
+        </div>
+        <div class="absolute bottom-8 left-8 w-16 h-16 bg-yellow-500/20 border border-yellow-500/50 rounded-lg flex items-center justify-center">
+          <span class="text-yellow-400 text-xs">奇鋐</span>
+        </div>
+        <div class="absolute bottom-8 right-8 w-16 h-16 bg-indigo-500/30 border border-indigo-400 rounded-lg flex items-center justify-center">
+          <span class="text-indigo-400 text-xs font-bold">Delta</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 8: Case Studies -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">08</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">Case Studies</span>
+        <h2 class="text-3xl font-bold text-white">全球標竿客戶採用實績</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+      <div class="card rounded-2xl p-6 border-l-4 border-l-green-500">
+        <div class="text-2xl mb-3">🌐</div>
+        <h3 class="text-white font-semibold mb-1">北美 CSP</h3>
+        <p class="text-gray-500 text-xs mb-3">雲端服務巨頭</p>
+        <p class="text-gray-400 text-sm mb-3">部署 5,000+ Rack 液冷系統</p>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">PUE</span>
+            <span class="text-green-400 font-semibold">1.12</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">節電</span>
+            <span class="text-green-400 font-semibold">38%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card rounded-2xl p-6 border-l-4 border-l-blue-500">
+        <div class="text-2xl mb-3">🇹🇼</div>
+        <h3 class="text-white font-semibold mb-1">台灣 Tier-1</h3>
+        <p class="text-gray-500 text-xs mb-3">資料中心</p>
+        <p class="text-gray-400 text-sm mb-3">採用 Delta CDU + Cold Plate</p>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">散熱效率</span>
+            <span class="text-blue-400 font-semibold">+65%</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">節電</span>
+            <span class="text-blue-400 font-semibold">35%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card rounded-2xl p-6 border-l-4 border-l-purple-500">
+        <div class="text-2xl mb-3">🏛️</div>
+        <h3 class="text-white font-semibold mb-1">歐洲 HPC</h3>
+        <p class="text-gray-500 text-xs mb-3">超級計算中心</p>
+        <p class="text-gray-400 text-sm mb-3">Two-Phase 方案</p>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">散熱需求</span>
+            <span class="text-purple-400 font-semibold">1.2MW</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">認證</span>
+            <span class="text-purple-400 font-semibold">✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8">
+      <h3 class="text-white font-semibold mb-4">認證與導入時程</h3>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-gray-800/50 rounded-lg">
+          <div class="text-3xl mb-2">🔬</div>
+          <p class="text-white font-semibold">POC</p>
+          <p class="text-gray-500 text-xs">6-8 週</p>
+          <p class="text-gray-600 text-xs mt-1">熱密度分析<br>環境評估</p>
+        </div>
+        <div class="text-center p-4 bg-indigo-900/20 rounded-lg border border-indigo-500/30">
+          <div class="text-3xl mb-2">✅</div>
+          <p class="text-white font-semibold">認證</p>
+          <p class="text-gray-500 text-xs">8-12 週</p>
+          <p class="text-gray-600 text-xs mt-1">系統整合<br>NVIDIA 驗收</p>
+        </div>
+        <div class="text-center p-4 bg-gray-800/50 rounded-lg">
+          <div class="text-3xl mb-2">🚀</div>
+          <p class="text-white font-semibold">量產</p>
+          <p class="text-gray-500 text-xs">備貨 4-8 週</p>
+          <p class="text-gray-600 text-xs mt-1">全球供貨<br>在地化倉儲</p>
+        </div>
+        <div class="text-center p-4 bg-gray-800/50 rounded-lg">
+          <div class="text-3xl mb-2">🛠️</div>
+          <p class="text-white font-semibold">服務</p>
+          <p class="text-gray-500 text-xs">24/7</p>
+          <p class="text-gray-600 text-xs mt-1">監控系統<br>定期檢修</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 9: Implementation -->
+  <div class="max-w-5xl mx-auto py-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-num">09</span>
+      <div>
+        <span class="text-xs text-gray-500 uppercase tracking-widest">Implementation</span>
+        <h2 class="text-3xl font-bold text-white">三步驟完成液冷轉型</h2>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="card rounded-2xl p-6 flex gap-6">
+        <div class="text-4xl font-bold text-indigo-500">1</div>
+        <div class="flex-1">
+          <h3 class="text-white font-semibold text-xl mb-2">評估與 POC</h3>
+          <p class="text-gray-400 text-sm mb-3">6-8 週</p>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li>• 熱密度分析與模擬</li>
+            <li>• 現有機房環境評估（冷水管路、配電、空間）</li>
+            <li>• 提供 POC 套件實測散熱效果</li>
+            <li>• 技術方案選擇（One-Phase vs Two-Phase）</li>
+          </ul>
+        </div>
+        <div class="text-6xl opacity-20">🔬</div>
+      </div>
+
+      <div class="card rounded-2xl p-6 flex gap-6">
+        <div class="text-4xl font-bold text-purple-500">2</div>
+        <div class="flex-1">
+          <h3 class="text-white font-semibold text-xl mb-2">認證與整合</h3>
+          <p class="text-gray-400 text-sm mb-3">8-12 週</p>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li>• Delta 液冷系統與客戶既有系統深度整合</li>
+            <li>• 壓力測試、邊界條件驗證</li>
+            <li>• 協助通過 NVIDIA / Intel / AMD 認證</li>
+            <li>• 最終效能驗收</li>
+          </ul>
+        </div>
+        <div class="text-6xl opacity-20">⚙️</div>
+      </div>
+
+      <div class="card rounded-2xl p-6 flex gap-6">
+        <div class="text-4xl font-bold text-green-500">3</div>
+        <div class="flex-1">
+          <h3 class="text-white font-semibold text-xl mb-2">量產部署與服務</h3>
+          <p class="text-gray-400 text-sm mb-3">持續</p>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li>• 全球供貨、在地化倉儲（台灣/美國/歐洲）</li>
+            <li>• 24/7 數位孿生監控系統</li>
+            <li>• 定期售後服務檢修</li>
+            <li>• 技術更新與下一代方案升級路徑</li>
+          </ul>
+        </div>
+        <div class="text-6xl opacity-20">🏭</div>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-6 mt-6">
+      <h3 class="text-white font-semibold mb-4">導入里程碑</h3>
+      <div class="relative">
+        <div class="absolute top-4 left-0 right-0 h-1 bg-gray-700"></div>
+        <div class="absolute top-4 left-0 w-3 h-3 bg-indigo-500 rounded-full"></div>
+        <div class="absolute top-4 left-[33%] w-3 h-3 bg-purple-500 rounded-full"></div>
+        <div class="absolute top-4 left-[66%] w-3 h-3 bg-green-500 rounded-full"></div>
+        <div class="absolute top-4 right-0 w-3 h-3 bg-green-500 rounded-full"></div>
+        <div class="flex justify-between pt-6 text-xs text-gray-500">
+          <span>Week 0<br><span class="text-gray-400">啟動</span></span>
+          <span class="text-center">Week 6-8<br><span class="text-gray-400">POC 完成</span></span>
+          <span class="text-center">Week 14-20<br><span class="text-gray-400">認證通過</span></span>
+          <span class="text-right">Week 18-28<br><span class="text-gray-400">量產部署</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- Page 10: CTA -->
+  <div class="max-w-5xl mx-auto py-8 min-h-[80vh] flex flex-col justify-center">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-white mb-4">開啟您的液冷轉型之旅</h1>
+      <p class="text-xl text-gray-400">今天就聯繫 Delta，取得客製化散熱方案</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="card rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-4">📦</div>
+        <h3 class="text-white font-semibold mb-2">索取 POC 評估套件</h3>
+        <p class="text-gray-400 text-sm">專業團隊到府展示，6-8 週完成散熱評估</p>
+      </div>
+      <div class="card rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-4">📞</div>
+        <h3 class="text-white font-semibold mb-2">預約技術研討會</h3>
+        <p class="text-gray-400 text-sm">30 分鐘深入了解 Delta 液冷方案</p>
+      </div>
+      <div class="card rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-4">📄</div>
+        <h3 class="text-white font-semibold mb-2">下載技術白皮書</h3>
+        <p class="text-gray-400 text-sm">Vera Rubin 散熱方案深度解析</p>
+      </div>
+    </div>
+
+    <div class="card rounded-2xl p-8 text-center">
+      <p class="text-gray-400 mb-4">聯絡窗口</p>
+      <p class="text-white text-xl font-semibold mb-2">Delta Electronics — AI Thermal Solutions</p>
+      <p class="text-indigo-400">ai-thermal@delta.com.tw</p>
+    </div>
+
+    <div class="text-center mt-12 text-gray-600 text-sm">
+      <p>© 2026 Delta Electronics. All rights reserved.</p>
+      <p class="mt-2"><a href="index.html" class="text-indigo-400 hover:text-indigo-300">← 返回首頁</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
