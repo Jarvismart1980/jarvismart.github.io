@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>台股 AI 投資早報 - 2026-05-01</title>
+  <title>James 台股 AI 投資早報 - 2026-05-01</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -13,6 +13,7 @@
     .badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
     .badge-buy { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
     .badge-hold { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+    .badge-risk { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
   </style>
 </head>
 <body class="gradient-bg min-h-screen p-4 md:p-6 lg:p-8">
@@ -25,36 +26,154 @@
           <h1 class="text-2xl md:text-3xl font-bold text-white mt-1">AI族群回神 持續看好</h1>
         </div>
         <div class="flex items-center gap-3">
-          <span class="text-sm text-gray-400">2026-05-01</span>
+          <span class="text-sm text-gray-400">2026-05-01（勞動節）</span>
         </div>
       </div>
     </header>
 
+    <!-- 持股報價（取最近交易日 04/30）-->
     <section class="mb-8">
-      <h2 class="text-lg font-bold text-white mb-4">📊 大盤與持股</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <h2 class="text-lg font-bold text-white mb-4">📊 大盤與持股（04/30 收盤）</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
         <div class="card rounded-xl p-4 text-center border-l-4 border-l-green-500">
-          <div class="text-2xl font-bold text-green-400">+200</div>
-          <div class="text-xs text-gray-500">加權漲幅</div>
+          <div class="text-lg font-bold text-green-400">+200</div>
+          <div class="text-xs text-gray-500">加權漲幅（預估）</div>
         </div>
         <div class="card rounded-xl p-4 text-center border-l-4 border-l-green-500">
-          <div class="text-2xl font-bold text-green-400">1400</div>
+          <div class="text-lg font-bold text-green-400">2165</div>
           <div class="text-xs text-gray-500">台達電 (2308)</div>
+          <div class="text-xs text-gray-500">04/30 收盤</div>
         </div>
         <div class="card rounded-xl p-4 text-center border-l-4 border-l-green-500">
-          <div class="text-2xl font-bold text-green-400">220</div>
+          <div class="text-lg font-bold text-green-400">215.5</div>
           <div class="text-xs text-gray-500">南亞科 (2408)</div>
+          <div class="text-xs text-red-400">前日 235（-8.3%）</div>
         </div>
         <div class="card rounded-xl p-4 text-center border-l-4 border-l-indigo-500">
-          <div class="text-2xl font-bold text-indigo-400">約 118</div>
-          <div class="text-xs text-gray-500">凱基台灣50</div>
+          <div class="text-lg font-bold text-indigo-400">13.05</div>
+          <div class="text-xs text-gray-500">凱基台灣50 (009816)</div>
+          <div class="text-xs text-gray-500">04/30 收盤</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center border-l-4 border-l-red-500">
+          <div class="text-lg font-bold text-red-400">2135</div>
+          <div class="text-xs text-gray-500">台積電 (2330)</div>
+          <div class="text-xs text-red-400">前日 2180（-2.06%）</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3 mt-3">
+        <div class="card rounded-xl p-4 text-center border-l-4 border-l-yellow-500">
+          <div class="text-lg font-bold text-yellow-400">78,459</div>
+          <div class="text-xs text-gray-500">BTC (USD)</div>
+          <div class="text-xs text-green-400">+0.36%</div>
         </div>
       </div>
     </section>
 
+    <!-- 今日結論 -->
+    <section class="mb-8">
+      <div class="card rounded-2xl p-6 border-l-4 border-l-green-500">
+        <div class="flex items-start gap-3">
+          <div class="text-2xl">💡</div>
+          <div>
+            <h3 class="text-white font-semibold mb-2">今日一句結論</h3>
+            <p class="text-gray-300 leading-relaxed">
+              AI 族群出現反彈，液冷供應鏈長線趨勢不變。2408 南亞科重挫反映記憶體景氣擔憂，但 Delta 液冷入選 NVIDIA 供應商，基本面正向。持股續抱，等待 Vera Rubin 量產行情。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 產業關鍵數據 -->
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-white mb-4">📈 產業關鍵數據</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-green-400">35%</div>
+          <div class="text-xs text-gray-500 mt-1">2026 液冷滲透率</div>
+          <div class="text-xs text-gray-600 mt-1">TrendForce 預測</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-purple-400">35%</div>
+          <div class="text-xs text-gray-500 mt-1">2030 CPO 市場</div>
+          <div class="text-xs text-gray-600 mt-1">TrendForce 預測</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-yellow-400">100%</div>
+          <div class="text-xs text-gray-500 mt-1">Vera Rubin 液冷</div>
+          <div class="text-xs text-gray-600 mt-1">NVIDIA 全液冷</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-indigo-400">130kW</div>
+          <div class="text-xs text-gray-500 mt-1">機架功率密度</div>
+          <div class="text-xs text-gray-600 mt-1">GB200 NVL72</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 生態系動態 -->
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-white mb-4">🏢 生態系動態</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="card rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-white font-semibold">NVIDIA</span>
+              <p class="text-sm text-gray-400 mt-1">Vera Rubin 100% 液冷，2026H2 量產</p>
+            </div>
+            <span class="badge badge-buy text-xs">利多</span>
+          </div>
+        </div>
+        <div class="card rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-white font-semibold">Delta 台達電</span>
+              <p class="text-sm text-gray-400 mt-1">入選 Vera Rubin 冷板供應商</p>
+            </div>
+            <span class="badge badge-buy text-xs">利多</span>
+          </div>
+        </div>
+        <div class="card rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-white font-semibold">Microsoft</span>
+              <p class="text-sm text-gray-400 mt-1">快速導入液冷 GB200</p>
+            </div>
+            <span class="badge badge-buy text-xs">需求</span>
+          </div>
+        </div>
+        <div class="card rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-white font-semibold">光寶科</span>
+              <p class="text-sm text-gray-400 mt-1">展示 800V 液冷機櫃方案</p>
+            </div>
+            <span class="badge badge-hold text-xs">觀望</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 持股診斷 -->
     <section class="mb-8">
       <h2 class="text-lg font-bold text-white mb-4">💼 持股診斷</h2>
       <div class="space-y-4">
+        <div class="card rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-white font-semibold">2308 台達電</span>
+            <span class="badge badge-hold">續抱</span>
+          </div>
+          <p class="text-gray-400 text-sm">液冷供應商入選 Vera Rubin，基本面持續看好。04/30 收盤 2165 元，估值合理區間。</p>
+          <div class="mt-2 text-xs text-green-400">支撐區：2,000～2,200</div>
+        </div>
+        <div class="card rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-white font-semibold">2408 南亞科</span>
+            <span class="badge badge-risk">減碼注意</span>
+          </div>
+          <p class="text-gray-400 text-sm">48,000 股 | 前日重挫 8.3%，從 235 跌至 215.5。DRAM 供需疑慮浮現，需觀察是否跌破 200 支撐。</p>
+          <div class="mt-2 text-xs text-red-400">⚠️ 跌破 200 需停損</div>
+        </div>
         <div class="card rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
             <span class="text-white font-semibold">009816 凱基台灣 TOP50</span>
@@ -64,31 +183,43 @@
         </div>
         <div class="card rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
-            <span class="text-white font-semibold">2308 台達電</span>
+            <span class="text-white font-semibold">2330 台積電</span>
             <span class="badge badge-hold">續抱</span>
           </div>
-          <p class="text-gray-400 text-sm">100 股 | 液冷供應商入選 Vera Rubin，基本面持續看好。</p>
-        </div>
-        <div class="card rounded-xl p-5">
-          <div class="flex justify-between items-center mb-3">
-            <span class="text-white font-semibold">2408 南亞科</span>
-            <span class="badge badge-hold">續抱</span>
-          </div>
-          <p class="text-gray-400 text-sm">48,000 股 | DRAM 供不應求，基本面支撐強。</p>
+          <p class="text-gray-400 text-sm">小幅回調 2%，估值合理，CoWoS 先進封裝產能吃緊，長線不變。</p>
         </div>
       </div>
     </section>
 
+    <!-- 風險提醒 -->
     <section class="mb-8">
-      <h2 class="text-lg font-bold text-white mb-4">📝 結論</h2>
-      <div class="card rounded-xl p-6 bg-gradient-to-r from-indigo-900/30 to-purple-900/30">
-        <p class="text-gray-300 leading-relaxed">AI 族群持續回神，液冷趨勢確立。持股無須調整，續抱待漲。</p>
+      <h2 class="text-lg font-bold text-white mb-4">⚠️ 風險提醒</h2>
+      <div class="card rounded-xl p-6 border-l-4 border-l-red-500">
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>• 2408 南亞科單日重挫 8.3%，記憶體景氣循環需密切追蹤報價趨勢</li>
+          <li>• NVIDIA Vera Rubin 量產前供應鏈驗證期存在不確定性</li>
+          <li>• 液冷滲透率加速可能面臨零組件供應瓶頸（冷板、CDU、泵）</li>
+          <li>• 2330 台積電地緣政治風險與先進製程競爭風險長線存在</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 今日動作建議 -->
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-white mb-4">✅ 今日動作建議</h2>
+      <div class="card rounded-xl p-6">
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>• 持股無須調整，液冷長線趨勢確立，續抱待漲</li>
+          <li>• 2408 南亞科：設好停損（200 元），跌破果斷出脫</li>
+          <li>• 2308 台達電：液冷基本面具備，逢回可加碼</li>
+          <li>• 追蹤 Vera Rubin 供應商名單動態（預計 2026Q2 公佈）</li>
+        </ul>
       </div>
     </section>
 
     <footer class="text-center text-gray-600 text-xs pt-8 pb-4 border-t border-gray-800">
-      <p class="mb-1">資料來源：台灣證券交易所</p>
-      <p class="mt-1">建立時間：2026-05-01</p>
+      <p class="mb-1">資料來源：yfinance（Yahoo Finance）、TrendForce 2026 研究報告</p>
+      <p class="mt-1">建立時間：2026-05-01｜僅供參考，不構成投資建議</p>
     </footer>
   </div>
 </body>
