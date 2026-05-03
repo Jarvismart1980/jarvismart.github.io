@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TMSBU AI Liquid Cooling V6 — Visual & Content Enhancement</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0E1A; color: #E5E7EB; font-family: 'Segoe UI', Arial, sans-serif; }
+  a { color: #00E5FF; text-decoration: none; }
+  a:hover { color: #4FC3F7; }
+
+  /* Header */
+  header { background: linear-gradient(135deg, #0B0E1A 0%, #111827 100%); border-bottom: 1px solid #00E5FF33; padding: 20px 0; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+  .version-badge { background: #00E5FF; color: #0B0E1A; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; letter-spacing: 1px; }
+  .badge-v6 { background: #A855F7; color: #fff; }
+  .badge-v5 { background: #6B7280; color: #fff; }
+
+  h1 { font-size: 22px; font-weight: 700; color: #fff; margin: 8px 0 4px; }
+  .subtitle { color: #6B7280; font-size: 13px; }
+
+  /* Download Cards */
+  .download-bar { background: #111827; padding: 16px 0; border-bottom: 1px solid #1F2937; }
+  .download-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .dl-card { display: flex; align-items: center; gap: 8px; background: #1F2937; border: 1px solid #374151; border-radius: 8px; padding: 10px 18px; font-size: 13px; color: #9CA3AF; transition: all 0.2s; }
+  .dl-card:hover { border-color: #00E5FF; color: #00E5FF; }
+  .dl-card .icon { font-size: 18px; }
+
+  /* Slide Grid */
+  .container { max-width: 1200px; margin: 0 auto; padding: 28px 20px; }
+  .section-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 1px solid #1F2937; }
+  .slide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(520px, 1fr)); gap: 20px; }
+
+  /* Slide Card */
+  .slide-card { background: #111827; border: 1px solid #1F2937; border-radius: 12px; overflow: hidden; transition: transform 0.2s; }
+  .slide-card:hover { transform: translateY(-2px); border-color: #00E5FF44; }
+  .slide-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #0B0E1A; }
+  .slide-info { padding: 14px 16px; }
+  .slide-num { font-size: 10px; font-weight: 700; color: #00E5FF; letter-spacing: 1px; margin-bottom: 4px; }
+  .slide-title { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .slide-msg { font-size: 11px; color: #6B7280; line-height: 1.5; }
+  .v6-fix { display: inline-block; background: #A855F7; color: #fff; font-size: 9px; padding: 2px 7px; border-radius: 10px; margin-bottom: 6px; font-weight: 600; }
+
+  /* Version Comparison */
+  .compare-section { margin-top: 36px; }
+  .compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 16px; }
+  .compare-card { background: #111827; border: 1px solid #1F2937; border-radius: 10px; padding: 16px; }
+  .compare-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .compare-v5 { color: #6B7280; font-size: 12px; font-weight: 600; }
+  .compare-v6 { color: #A855F7; font-size: 12px; font-weight: 600; }
+  .compare-arrow { color: #374151; }
+  .compare-item { padding: 6px 0; border-bottom: 1px solid #1F2937; font-size: 12px; color: #9CA3AF; }
+  .compare-item:last-child { border-bottom: none; }
+  .compare-item strong { color: #E5E7EB; }
+  .compare-item del { color: #6B7280; text-decoration: line-through; }
+  .compare-item ins { color: #00E676; text-decoration: none; font-weight: 600; }
+
+  /* Still Needs Validation */
+  .validate-section { margin-top: 36px; background: #111827; border: 1px solid #F59E0B44; border-radius: 10px; padding: 20px; }
+  .validate-section h3 { color: #F59E0B; font-size: 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .validate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+  .validate-item { background: #1F2937; border-radius: 6px; padding: 10px 12px; font-size: 11px; color: #9CA3AF; }
+  .validate-item strong { color: #F59E0B; display: block; margin-bottom: 3px; }
+
+  /* External Image Candidates */
+  .ext-section { margin-top: 36px; }
+  .ext-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  .ext-table th { text-align: left; padding: 8px 10px; background: #1F2937; color: #9CA3AF; border-bottom: 1px solid #374151; }
+  .ext-table td { padding: 8px 10px; border-bottom: 1px solid #1F2937; color: #6B7280; vertical-align: top; }
+  .ext-table tr:hover td { background: #111827; }
+  .status-ok { color: #00E676; font-weight: 600; }
+  .status-warning { color: #F59E0B; font-weight: 600; }
+  .status-no { color: #EF4444; font-weight: 600; }
+
+  /* Prompt List */
+  .prompt-section { margin-top: 36px; }
+  .prompt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }
+  .prompt-card { background: #111827; border: 1px solid #1F2937; border-radius: 8px; padding: 14px; }
+  .prompt-card h4 { color: #00E5FF; font-size: 12px; margin-bottom: 8px; }
+  .prompt-pre { background: #1F2937; border-radius: 6px; padding: 10px; font-size: 10px; color: #9CA3AF; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+
+  /* Footer */
+  footer { margin-top: 48px; padding: 20px; text-align: center; font-size: 11px; color: #374151; border-top: 1px solid #1F2937; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <span class="version-badge badge-v6">V6 — VISUAL & CONTENT ENHANCEMENT</span>
+      <h1>AI Server Liquid Cooling: TMSBU Commercial Opportunity & Strategic Roadmap</h1>
+      <p class="subtitle">Delta Electronics · TMSBU · Confidential · 2026</p>
+    </div>
+    <div style="text-align:right; font-size:11px; color:#6B7280;">
+      Generated: 2026-05-04<br>
+      <span style="color:#00E5FF;">10 Slides · 16:9</span>
+    </div>
+  </div>
+</header>
+
+<div class="download-bar">
+  <div class="download-inner">
+    <a class="dl-card" href="TMSBU_AI_Liquid_Cooling_v6.pptx">
+      <span class="icon">📊</span>PPTX (728 KB)
+    </a>
+    <a class="dl-card" href="TMSBU_AI_Liquid_Cooling_v6.pdf">
+      <span class="icon">📄</span>PDF (960 KB)
+    </a>
+    <span class="dl-card" style="cursor:default;">
+      <span class="icon">🖼️</span>10 PNG Previews
+    </span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Slide Previews -->
+<h2 class="section-title">📑 Slide Previews — V6</h2>
+<div class="slide-grid">
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-01.png" alt="Slide 01 Cover" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 01 — COVER</div>
+      <div class="slide-title">AI Server Liquid Cooling: Strategic Roadmap</div>
+      <div class="slide-msg">V6 Cover — AI server rack + liquid cooling loop illustration on dark bg</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-02.png" alt="Slide 02 Executive Summary" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 02 — EXECUTIVE SUMMARY</div>
+      <div class="slide-title">5-Card Bento Layout with Icons</div>
+      <div class="slide-msg">Trend · Market · Hybrid · Opportunity · Action — each with emoji icon</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-03.png" alt="Slide 03 Market Inflection" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 03 — MARKET INFLECTION</div>
+      <div class="slide-title">Rack Power Density Roadmap (2022–2027+)</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">GB200 NVL72 inflection marked, Rubin-era shift annotated. Sources labeled. Unvalidated '1,400W GPU TDP' removed.</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-04.png" alt="Slide 04 Hybrid Cooling" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 04 — HYBRID COOLING</div>
+      <div class="slide-title">Air + Liquid Hybrid Architecture Diagram</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">GPU→cold plate (liquid zone) | Memory/PCB/Power→airflow (air zone). HBM ~1kW unvalidated claim removed.</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-05.png" alt="Slide 05 Chip-to-Rack Architecture" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 05 — CHIP-TO-RACK ARCHITECTURE</div>
+      <div class="slide-title">5-Node Flow Diagram (Cold Plate → Facility Loop)</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">Quick Connector at serviceability position. No '130kW+', '5-10°C', 'leak rate <0.5g/year' unvalidated numbers.</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-06.png" alt="Slide 06 Portfolio" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 06 — TMSBU PORTFOLIO</div>
+      <div class="slide-title">4-Layer Value Ladder (Component→Module→System→Solution)</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">NOW/NEXT/PHASE2/TARGET replaced with formal 4-layer structure. Value-up concept preserved.</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-07.png" alt="Slide 07 Delta Synergy" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 07 — DELTA GROUP SYNERGY</div>
+      <div class="slide-title">Four Quadrant Advantage</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">Customer Value Line added: lower integration risk, faster design-in, better reliability, stronger energy-efficiency. No '唯一' language.</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-08.png" alt="Slide 08 Market Opportunity" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 08 — MARKET OPPORTUNITY</div>
+      <div class="slide-title">TAM/SAM/SOM Funnel + 3-Scenario Bar Chart</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">V5 had large empty areas — V6 fills main visual with funnel + bar chart. Conservative $0.8B / Base $1.8B / Aggressive $3.2B.</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-09.png" alt="Slide 09 Risk Assessment" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 09 — RISK ASSESSMENT</div>
+      <div class="slide-title">Impact × Urgency Heatmap + Top 3 Priorities</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">V5 table → V6 heatmap. Top 3 immediate priorities in right column. All other risks in heatmap cells.</div>
+    </div>
+  </div>
+
+  <div class="slide-card">
+    <img class="slide-img" src="v6_page-10.png" alt="Slide 10 Roadmap" loading="lazy">
+    <div class="slide-info">
+      <div class="slide-num">SLIDE 10 — STRATEGIC ROADMAP</div>
+      <div class="slide-title">4-Lane Timeline (Technology/Customer/Product/Business Model)</div>
+      <span class="v6-fix">V6 FIX</span>
+      <div class="slide-msg">More formal lane labels. Decision box: 90-Day Decision — CDU strategy build/partner/acquire.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- V5 → V6 Comparison -->
+<div class="compare-section">
+  <h2 class="section-title">🔄 V5 → V6 Key Changes Summary</h2>
+  <div class="compare-grid">
+
+    <div class="compare-card">
+      <div class="compare-header">
+        <span class="compare-v5">V5 Issue</span>
+        <span class="compare-arrow">→</span>
+        <span class="compare-v6">V6 Fix</span>
+      </div>
+      <div class="compare-item">P3: '1,400W GPU TDP' unvalidated</div>
+      <div class="compare-item">→ <strong>V6: "1,000W+ next-gen projection" with source label</strong></div>
+
+      <div class="compare-item" style="margin-top:10px;">P4: No hybrid architecture diagram (just comparison cards)</div>
+      <div class="compare-item">→ <strong>V6: New GPU→cold plate + memory/PCB→airflow diagram</strong></div>
+
+      <div class="compare-item" style="margin-top:10px;">P5: Quick Connector shown as main flow node, '130kW+' unvalidated</div>
+      <div class="compare-item">→ <strong>V6: QC at serviceability position, no unvalidated capacity numbers</strong></div>
+
+      <div class="compare-item" style="margin-top:10px;">P6: NOW/NEXT/PHASE2/TARGET labels (unclear)</div>
+      <div class="compare-item">→ <strong>V6: Layer 1/2/3/4 formal structure (Component→Module→System→Solution)</strong></div>
+
+      <div class="compare-item" style="margin-top:10px;">P7: No customer value statement, '唯一' language</div>
+      <div class="compare-item">→ <strong>V6: Customer Value Line added, '唯一' removed</strong></div>
+
+      <div class="compare-item" style="margin-top:10px;">P8: Large empty area, tiny blurry chart</div>
+      <div class="compare-item">→ <strong>V6: Full TAM/SAM/SOM funnel + 3-scenario bar fills main visual</strong></div>
+
+      <div class="compare-item" style="margin-top:10px;">P9: Risk table (boring, low visual impact)</div>
+      <div class="compare-item">→ <strong>V6: Impact × Urgency 3×3 heatmap, Top 3 priorities right column</strong></div>
+
+      <div class="compare-item" style="margin-top:10px;">P10: Informal roadmap text labels</div>
+      <div class="compare-item">→ <strong>V6: Formal Technology/Customer/Product/Business Model lanes</strong></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- External Image Candidates -->
+<div class="ext-section">
+  <h2 class="section-title">🔍 External Image Candidates (for future high-res versions)</h2>
+  <table class="ext-table">
+    <thead>
+      <tr>
+        <th>Image Type</th>
+        <th>Recommended Slide</th>
+        <th>Why It Fits</th>
+        <th>License / Risk</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>NVIDIA GB200 NVL72 Rack (official)</td>
+        <td>P3 / P4</td>
+        <td>Real product visual for rack power density context</td>
+        <td>NVIDIA press kit — editorial use ok, commercial needs permission</td>
+        <td><span class="status-warning">⚠ Verify license</span></td>
+      </tr>
+      <tr>
+        <td>AI server liquid cooling rack diagram</td>
+        <td>P4 / P5</td>
+        <td>Complements hybrid cooling + chip-to-rack architecture diagrams</td>
+        <td>NVIDIA/partner documentation — needs written permission</td>
+        <td><span class="status-warning">⚠ Verify license</span></td>
+      </tr>
+      <tr>
+        <td>Cold plate liquid cooling module</td>
+        <td>P5</td>
+        <td>Supports chip-to-rack architecture, cold plate node</td>
+        <td>Asetek / CoolIT Systems — product images often restricted</td>
+        <td><span class="status-warning">⚠ Verify license</span></td>
+      </tr>
+      <tr>
+        <td>CDU coolant distribution unit diagram</td>
+        <td>P5</td>
+        <td>Supports CDU node in chip-to-rack flow</td>
+        <td>N/A — no good freely-licensed candidate found</td>
+        <td><span class="status-no">Use generated diagram</span></td>
+      </tr>
+      <tr>
+        <td>Data center liquid cooling loop (facility-level)</td>
+        <td>P5</td>
+        <td>Supports Facility Loop node</td>
+        <td>Schneider Electric / Vertiv press kits — editorial use ok</td>
+        <td><span class="status-warning">⚠ Verify license</span></td>
+      </tr>
+      <tr>
+        <td>Direct-to-chip liquid cooling architecture</td>
+        <td>P5</td>
+        <td>Supports chip-to-rack architecture overview</td>
+        <td>N/A — no good freely-licensed candidate found</td>
+        <td><span class="status-no">Use generated diagram</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:10px;font-size:11px;color:#6B7280;">
+    ⚠ Recommendation: All external images need written permission before inclusion in customer-facing materials.
+    For now, V6 uses matplotlib-generated diagrams which are 100% original and have no licensing concerns.
+    The diagrams are less photorealistic but are accurate, properly-sourced, and legally clean.
+  </p>
+</div>
+
+<!-- Image Generation Prompts -->
+<div class="prompt-section">
+  <h2 class="section-title">🎨 ComfyUI / SDXL Image Generation Prompts (for future high-res visuals)</h2>
+  <div class="prompt-grid">
+
+    <div class="prompt-card">
+      <h4>1. Cover Image — AI Server Liquid Cooling</h4>
+      <pre class="prompt-pre">futuristic corporate technology presentation, dark blue and black background, neon cyan highlights, high-end business infographic, clean layout, AI server rack with liquid cooling loop, cold plate, CDU, coolant flow visualization, data center infrastructure, isometric technical diagram, minimal text, 16:9 aspect ratio, blue LED lighting, GPU chips with water cooling blocks, server rack with transparent coolant tubes</pre>
+    </div>
+
+    <div class="prompt-card">
+      <h4>2. Hybrid Cooling — Liquid for GPU + Air for Memory/PCB</h4>
+      <pre class="prompt-pre">AI server motherboard cross-section diagram, GPU chips with direct liquid cooling cold plates on top, memory modules with airflow cooling fans below, PCB with power delivery components, dark tech background, cyan and orange neon highlights, technical illustration style, clean minimal labels, 16:9, no text on image</pre>
+    </div>
+
+    <div class="prompt-card">
+      <h4>3. Chip-to-Rack Architecture — Cooling Loop Flow</h4>
+      <pre class="prompt-pre">data center liquid cooling system flow diagram, cold plate attached to GPU chip, server manifold with quick connectors, rack CDU unit, facility cooling tower loop, dark blue background, neon cyan green orange color scheme, technical infographic style, isometric view, clean minimal design, 16:9 aspect ratio, no text labels on diagram</pre>
+    </div>
+
+  </div>
+</div>
+
+<!-- Still Needs Validation -->
+<div class="validate-section">
+  <h3>⚠️ Still Needs TMSBU Internal Validation (V6)</h3>
+  <div class="validate-grid">
+
+    <div class="validate-item">
+      <strong>Market Sizing</strong>
+      SAM $12.8B calculation basis (33% of TAM — is this reasonable for TMSBU?). SOM base-case 14% share assumption needs pipeline cross-validation. TAM $39.1B M&M report date and scope.
+    </div>
+
+    <div class="validate-item">
+      <strong>CDU Strategy</strong>
+      Build / Partner / Acquire decision framework — leadership decision needed. Quick Connector supplier candidates. Value ladder mapping to existing TMSBU products.
+    </div>
+
+    <div class="validate-item">
+      <strong>Customer Pipeline</strong>
+      Current TMSBU server thermal revenue market share. Active design-in or thermal review count. Any tier-1 server OEM/ODM with expressed interest?
+    </div>
+
+    <div class="validate-item">
+      <strong>Competitive Intelligence</strong>
+      Vertiv, Schneider, nVent liquid cooling product lines and market share. Chinese supplier cold plate / manifold cost competitiveness.
+    </div>
+
+    <div class="validate-item">
+      <strong>Rack Power Data</strong>
+      GB200 NVL72 actual rack power (sources vary: 72kW vs 130kW). Rubin architecture power projections. Analyst forecast accuracy requires verification.
+    </div>
+
+    <div class="validate-item">
+      <strong>CDU / Leak Specs</strong>
+      CDU capacity range (any specific kW figures). Cold plate thermal resistance range. Leak rate benchmarks. Coolant temperature targets.
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<footer>
+  Delta Electronics · TMSBU · Confidential · 2026<br>
+  Generated by Hermes Agent · Jarvis Workflows v3
+</footer>
+
+</body>
+</html>
