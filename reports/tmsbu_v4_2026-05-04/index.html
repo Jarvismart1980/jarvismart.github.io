@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TMSBU AI Liquid Cooling V4 | Typography Fixed | 2026-05-04</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #060D1F; color: #E0E0E0; }
+    .slide-card { background: #0B0E1A; border: 1px solid #1E2A4A; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,229,255,0.08); }
+    .slide-img { width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #060D1F; }
+    .tag { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+    .tag-cyan { background: rgba(0,229,255,0.12); color: #00E5FF; border: 1px solid rgba(0,229,255,0.3); }
+    .tag-green { background: rgba(0,230,118,0.12); color: #00E676; border: 1px solid rgba(0,230,118,0.3); }
+    .tag-purple { background: rgba(168,85,247,0.12); color: #A855F7; border: 1px solid rgba(168,85,247,0.3); }
+    .tag-orange { background: rgba(245,158,11,0.12); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3); }
+    .tag-red { background: rgba(239,68,68,0.12); color: #EF4444; border: 1px solid rgba(239,68,68,0.3); }
+    .card { background: #111827; border: 1px solid #1F2937; border-radius: 12px; }
+    a { color: #00E5FF; }
+    .header-gradient { background: linear-gradient(135deg, #060D1F 0%, #0D1B2A 100%); }
+    .insight-box { background: rgba(0,229,255,0.05); border: 1px solid rgba(0,229,255,0.2); border-radius: 8px; padding: 10px 14px; }
+    .version-badge { background: linear-gradient(135deg, #00E5FF, #A855F7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; fontweight: 900; }
+  </style>
+</head>
+<body class="min-h-screen p-6 md:p-10">
+
+<div class="max-w-6xl mx-auto">
+
+  <!-- Header -->
+  <header class="mb-10 header-gradient rounded-2xl p-8 border border-cyan-900/50">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+      <div>
+        <div class="text-xs text-cyan-400 uppercase tracking-widest mb-2">
+          Delta TMSBU 策略簡報 <span class="version-badge">V4</span>
+          <span class="text-gray-500 ml-2">Typography Fixed</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-black text-white leading-tight">AI Server Liquid Cooling：<br>TMSBU 商業機會分析</h1>
+        <p class="text-gray-400 mt-2 text-sm">字體與排版修正版 — 杜絕文字重疊、修正層級、統一字級</p>
+      </div>
+      <div class="text-right">
+        <div class="text-xs text-gray-500">James Chen / TMSBU</div>
+        <div class="text-xs text-gray-500 mt-1">2026 年 5 月 4 日</div>
+        <div class="flex gap-2 mt-3 justify-end flex-wrap">
+          <span class="tag tag-cyan">10 Pages</span>
+          <span class="tag tag-green">Typography Fixed</span>
+          <span class="tag tag-purple">V4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- V4 Fixes Banner -->
+    <div class="mt-5 grid md:grid-cols-4 gap-3">
+      <div class="card p-3">
+        <div class="text-xs text-cyan-400 font-semibold mb-1">✅ 字級統一</div>
+        <div class="text-xs text-gray-400">Cover 44-48pt · Slide title 28pt · Body 11-13pt</div>
+      </div>
+      <div class="card p-3">
+        <div class="text-xs text-red-400 font-semibold mb-1">✅ Cover 不壓圖</div>
+        <div class="text-xs text-gray-400">左側深色面板 42% + 右側圖片 58%，文字不壓圖</div>
+      </div>
+      <div class="card p-3">
+        <div class="text-xs text-green-400 font-semibold mb-1">✅ 數字與 label 分離</div>
+        <div class="text-xs text-gray-400">大數字 34-44pt · 說明 label 10-11pt，不黏在一起</div>
+      </div>
+      <div class="card p-3">
+        <div class="text-xs text-purple-400 font-semibold mb-1">✅ Risk 移除長表格</div>
+        <div class="text-xs text-gray-400">改為 Impact × Urgency heatmap + Immediate Priorities card</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Download Section -->
+  <section class="mb-10">
+    <h2 class="text-lg font-bold text-white mb-4">📥 下載檔案</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="TMSBU_AI_Liquid_Cooling_v4.pptx" download class="card p-5 hover:border-cyan-500 transition-colors group">
+        <div class="text-3xl mb-2">📊</div>
+        <div class="font-semibold text-white group-hover:text-cyan-400 transition-colors">PowerPoint (.pptx)</div>
+        <div class="text-xs text-gray-500 mt-1">V4 Typography Fixed，922KB，可直接編輯</div>
+      </a>
+      <a href="TMSBU_AI_Liquid_Cooling_v4.pdf" download class="card p-5 hover:border-cyan-500 transition-colors group">
+        <div class="text-3xl mb-2">📄</div>
+        <div class="font-semibold text-white group-hover:text-cyan-400 transition-colors">PDF 檔 (.pdf)</div>
+        <div class="text-xs text-gray-500 mt-1">可用 PDF 閱讀器或瀏覽器開啟</div>
+      </a>
+      <div class="card p-5">
+        <div class="text-3xl mb-2">🖼️</div>
+        <div class="font-semibold text-white">預覽圖（10 頁）</div>
+        <div class="text-xs text-gray-500 mt-1">以下滾動查看每頁 PNG 預覽</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide Previews -->
+  <section class="mb-10">
+    <h2 class="text-lg font-bold text-white mb-4">🖼️ 簡報預覽（10 頁）</h2>
+    <div class="space-y-8">
+
+      <!-- PAGE 01: Cover -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 01</span>
+            <span class="text-white font-semibold">Cover — Left Panel + Right Image (42/58 Split)</span>
+          </div>
+          <span class="tag tag-cyan">Cover</span>
+        </div>
+        <img src="v4_page-01.png" alt="Slide 1" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-cyan-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">左側 42% 深色面板（65%透明度）放文字，右側 58% 放圖片。Cover title 44-48pt，不壓圖。</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-green-400 font-semibold mb-1">💡 Core Message</div>
+              <p class="text-gray-300">AI Server Liquid Cooling · Strategic Roadmap · V4 Typography Fixed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 02: Executive Summary -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 02</span>
+            <span class="text-white font-semibold">Executive Summary — 5 Card Bento (Number + Label Separated)</span>
+          </div>
+          <span class="tag tag-cyan">Executive Summary</span>
+        </div>
+        <img src="v4_page-02.png" alt="Slide 2" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-red-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">V3: 1,400WGPU TDP 黏在一起 → V4: 大數字 32pt，label 10pt 分開。5 卡片固定三層結構：Tag / Big Number / 1行說明</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-cyan-400 font-semibold mb-1">💡 Core Message</div>
+              <p class="text-gray-300">液冷是商業模式轉型，不是產品升級 — 5張卡，3秒掌握全貌</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 03: Market Inflection -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 03</span>
+            <span class="text-white font-semibold">Market Inflection — Timeline + 3 Stat Cards</span>
+          </div>
+          <span class="tag tag-green">Market Inflection</span>
+        </div>
+        <img src="v4_page-03.png" alt="Slide 3" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-green-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">3 stat cards: 大數字 34pt + label 10pt 分開。Insight zone 不佔用主視覺空間，Source 固定在底部</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-orange-400 font-semibold mb-1">📊 Big Numbers</div>
+              <p class="text-gray-300">1,400W GPU TDP · 160kW Rack Power · $39.1B TAM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 04: Hybrid Cooling -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 04</span>
+            <span class="text-white font-semibold">Hybrid Cooling — Left vs Right Clean Comparison</span>
+          </div>
+          <span class="tag tag-green">Hybrid Cooling</span>
+        </div>
+        <img src="v4_page-04.png" alt="Slide 4" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-green-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">左右對比版型：「Not Air vs. Liquid」核心句只出現一次（24-28pt），左右各4個 bullet（13-14pt）</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-cyan-400 font-semibold mb-1">💡 Core Message</div>
+              <p class="text-gray-300">Not Air vs. Liquid — The Future Is Hybrid Architecture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 05: Liquid Cooling Architecture -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 05</span>
+            <span class="text-white font-semibold">Liquid Cooling Architecture — Clean Flow Diagram</span>
+          </div>
+          <span class="tag tag-green">Architecture</span>
+        </div>
+        <img src="v4_page-05.png" alt="Slide 5" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-green-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">Flow diagram: 5節點，每節點標題 16pt + 說明 11pt，無長段落。底部 Insight zone 13pt</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-cyan-400 font-semibold mb-1">💡 Core Message</div>
+              <p class="text-gray-300">Cold Plate → Manifold → Rack CDU → Facility Loop → Leak Detection</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 06: Portfolio Mapping -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 06</span>
+            <span class="text-white font-semibold">Portfolio Mapping — 4-Layer Value Ladder</span>
+          </div>
+          <span class="tag tag-purple">Portfolio</span>
+        </div>
+        <img src="v4_page-06.png" alt="Slide 6" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-green-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">Value ladder: 每層標題 17pt + 產品文字 12-13pt，不塞滿，越往上顏色越亮</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-cyan-400 font-semibold mb-1">💡 Core Message</div>
+              <p class="text-gray-300">Component → Module → System → Solution（最高價值捕獲）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 07: Delta Group Synergy -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 07</span>
+            <span class="text-white font-semibold">Delta Group Synergy — 2×2 Quadrant (Clean)</span>
+          </div>
+          <span class="tag tag-purple">Delta Synergy</span>
+        </div>
+        <img src="v4_page-07.png" alt="Slide 7" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-purple-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">2×2 四象限：象限標題 17pt + 每象限關鍵詞 12-13pt，不超過3個關鍵詞，無長句</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-cyan-400 font-semibold mb-1">💡 Core Message</div>
+              <p class="text-gray-300">Power / Thermal / Control / Infrastructure → Delta Synergy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 08: Market Opportunity -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 08</span>
+            <span class="text-white font-semibold">Market Opportunity — TAM/SAM + 3 Scenarios</span>
+          </div>
+          <span class="tag tag-purple">Market</span>
+        </div>
+        <img src="v4_page-08.png" alt="Slide 8" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-orange-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">TAM/SAM/SOM 數字 30-36pt，情境名稱 14-16pt，assumption note 7-8pt，不在主畫面塞假設</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-cyan-400 font-semibold mb-1">⚠️ Assumption</div>
+              <p class="text-gray-300">SOM $1.8B = 14% of SAM，⚠️ 需要 James 內部驗證</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 09: Risk Assessment -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 09</span>
+            <span class="text-white font-semibold">Risk Assessment — Heatmap + Immediate Priorities Card</span>
+          </div>
+          <span class="tag tag-red">Risk</span>
+        </div>
+        <img src="v4_page-09.png" alt="Slide 9" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-red-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">移除長表格，改為 Impact × Urgency heatmap（8項） + Immediate Priorities card（右側），詳細風險移至 speaker notes</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-red-400 font-semibold mb-1">🚨 Priorities</div>
+              <p class="text-gray-300">① CDU Strategy  ② Leak Reliability  ③ Customer Qual Cycle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 10: Strategic Roadmap -->
+      <div class="slide-card">
+        <div class="p-4 border-b border-gray-800 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs text-cyan-400 font-mono mr-3">PAGE 10</span>
+            <span class="text-white font-semibold">Strategic Roadmap — 4-Lane Timeline + Decision Box</span>
+          </div>
+          <span class="tag tag-green">Roadmap</span>
+        </div>
+        <img src="v4_page-10.png" alt="Slide 10" class="slide-img">
+        <div class="p-4">
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="insight-box">
+              <div class="text-xs text-green-400 font-semibold mb-1">✅ V4 Fix</div>
+              <p class="text-gray-300">4泳道：Technology / Customer / Product / Business Model，每格 11-12pt，右下角 decision box 15pt</p>
+            </div>
+            <div class="insight-box">
+              <div class="text-xs text-orange-400 font-semibold mb-1">🔑 Decision</div>
+              <p class="text-gray-300">Phase 1 Decision: CDU strategy locked within 90 days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- V4 Typography Fixes Summary -->
+  <section class="mb-10">
+    <h2 class="text-lg font-bold text-white mb-4">✅ V4 逐項修正摘要</h2>
+    <div class="grid md:grid-cols-2 gap-4 text-sm">
+      <div class="card p-4">
+        <div class="text-xs text-cyan-400 font-semibold mb-2">📐 版面修正</div>
+        <ul class="text-gray-400 space-y-1">
+          <li>• P1 Cover: 42%左側深色面板 + 58%右側圖片，文字不壓圖</li>
+          <li>• P2 Executive Summary: 大數字與 label 分開（不再黏在一起）</li>
+          <li>• P9 Risk: 移除長表格，改為 heatmap + Immediate Priorities card</li>
+          <li>• P10 Roadmap: 改為 4 泳道視覺化 + decision box</li>
+          <li>• 所有頁面：左右 margin 0.38"，上下 margin 0.25"</li>
+        </ul>
+      </div>
+      <div class="card p-4">
+        <div class="text-xs text-green-400 font-semibold mb-2">🔤 字級修正</div>
+        <ul class="text-gray-400 space-y-1">
+          <li>• Cover title: 44pt · Slide title: 28pt</li>
+          <li>• Core message: 13pt · Body bullet: 11-13pt</li>
+          <li>• Big number: 32-34pt · Label: 10pt</li>
+          <li>• Source / footnote: 7pt（唯一允許 &lt;10pt）</li>
+          <li>• 內文不得比標題大，嚴格執行</li>
+        </ul>
+      </div>
+      <div class="card p-4">
+        <div class="text-xs text-red-400 font-semibold mb-2">⚠️ 仍需人工檢查</div>
+        <ul class="text-gray-400 space-y-1">
+          <li>• P4 Hybrid: 圖片內文字是否有被截斷，需要人工確認</li>
+          <li>• P5 Flow: 5個節點內文字是否有被圖表元素遮住</li>
+          <li>• P9 Heatmap: 8項風險文字是否都在安全範圍內</li>
+          <li>• P10 Roadmap: 4泳道內每格文字是否完整顯示</li>
+        </ul>
+      </div>
+      <div class="card p-4">
+        <div class="text-xs text-purple-400 font-semibold mb-2">📝 Speaker Notes</div>
+        <ul class="text-gray-400 space-y-1">
+          <li>• 所有長段落內容已移至 Speaker Notes</li>
+          <li>• 每頁 Speaker Notes 含 ~150-300 字詳細說明</li>
+          <li>• Speaker Notes 適合 presenter 對著簡報講解</li>
+          <li>• 詳細風險表（R3+R4+R5+R6）已移至 speaker notes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-gray-600 border-t border-gray-800 pt-6 mt-10">
+    <div>Delta Electronics · TMSBU · Confidential · 2026</div>
+    <div class="mt-1">Generated by Hermes Agent · AI Server Liquid Cooling Strategic Roadmap V4</div>
+  </footer>
+
+</div>
+</body>
+</html>
