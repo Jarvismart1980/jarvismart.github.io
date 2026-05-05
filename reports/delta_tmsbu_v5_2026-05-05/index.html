@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delta TMSBU — AI Data Center Power & Cooling V5</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #05060F; color: #E2E8F0; font-family: -apple-system, sans-serif; }
+
+  .header {
+    background: linear-gradient(135deg, #0B0E1A 0%, #111827 100%);
+    border-bottom: 1px solid #1E293B;
+    padding: 24px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; color: #00E5FF; }
+  .header .meta { font-size: 12px; color: #6B7280; }
+  .badge { background: #00E5FF22; border: 1px solid #00E5FF; color: #00E5FF; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+
+  .downloads { display: flex; gap: 12px; }
+  .dl-btn {
+    padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
+  }
+  .dl-pptx { background: #00E5FF; color: #0B0E1A; }
+  .dl-pdf  { background: #111827; color: #00E5FF; border: 1px solid #00E5FF; }
+
+  .section-label {
+    padding: 16px 40px 8px;
+    font-size: 11px; font-weight: 700; color: #6B7280; letter-spacing: 1.5px; text-transform: uppercase;
+    background: #05060F;
+    position: sticky; top: 0; z-index: 10;
+  }
+
+  .slides-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 24px;
+    padding: 20px 40px 40px;
+  }
+
+  .slide-card {
+    background: #0B0E1A; border: 1px solid #1E293B; border-radius: 12px; overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .slide-card:hover { border-color: #00E5FF; }
+  .slide-card img { width: 100%; display: block; }
+  .slide-meta { padding: 14px 16px; }
+  .slide-num { font-size: 10px; font-weight: 700; color: #6B7280; letter-spacing: 1px; margin-bottom: 6px; }
+  .slide-title { font-size: 14px; font-weight: 700; color: #E2E8F0; margin-bottom: 4px; }
+  .slide-core { font-size: 11px; color: #00E5FF; font-style: italic; margin-bottom: 8px; }
+  .slide-insights { font-size: 10px; color: #9CA3AF; line-height: 1.6; }
+  .slide-insights li { margin-bottom: 2px; }
+
+  .summary-bar {
+    background: #111827; border-top: 1px solid #1E293B;
+    padding: 20px 40px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  }
+  .summary-item { text-align: center; }
+  .summary-item .num { font-size: 22px; font-weight: 700; color: #00E5FF; }
+  .summary-item .label { font-size: 10px; color: #6B7280; margin-top: 2px; }
+
+  .mindmap-section { padding: 20px 40px; }
+  .mindmap-section h2 { font-size: 16px; font-weight: 700; color: #E2E8F0; margin-bottom: 16px; }
+  .mindmap-section img { width: 100%; border-radius: 12px; border: 1px solid #1E293B; }
+
+  .footer { border-top: 1px solid #1E293B; padding: 16px 40px; text-align: center; font-size: 11px; color: #6B7280; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>AI Data Center Power &amp; Cooling — Delta Electronics</h1>
+    <div class="meta">TMSBU Strategy Presentation  |  May 5, 2026  |  10 Pages  |  CONFIDENTIAL</div>
+  </div>
+  <div class="downloads">
+    <a href="Delta_TMSBU_AI_DataCenter_V5.pptx" class="dl-btn dl-pptx" download>⬇ PPTX (955 KB)</a>
+    <a href="Delta_TMSBU_AI_DataCenter_V5.pdf" class="dl-btn dl-pdf" download>⬇ PDF</a>
+  </div>
+</div>
+
+<div class="summary-bar">
+  <div class="summary-item"><div class="num">25.4B</div><div class="label">NTD Net Income FY2025</div></div>
+  <div class="summary-item"><div class="num">35%</div><div class="label">AI Revenue / Delta Total</div></div>
+  <div class="summary-item"><div class="num">800V</div><div class="label">HVDC Architecture</div></div>
+  <div class="summary-item"><div class="num">68%</div><div class="label">EPS CAGR 2026–2028E</div></div>
+  <div class="summary-item"><div class="num">520</div><div class="label">NTD Price Target (MS)</div></div>
+</div>
+
+<div class="section-label">10 Slide Preview — V5</div>
+<div class="slides-grid">
+  <!-- P01 -->
+  <div class="slide-card">
+    <img src="v5_page-01.png" alt="Cover">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 01 — COVER</div>
+      <div class="slide-title">AI Data Center Power &amp; Cooling Revolution</div>
+      <div class="slide-core">"Delta Electronics Growth Story | TMSBU Strategy Insight"</div>
+      <div class="slide-insights">
+        <li>Cover: Abstract tech illustration — server racks, GPU blocks, liquid cooling tubes, circuit traces</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P02 -->
+  <div class="slide-card">
+    <img src="v5_page-02.png" alt="Executive Summary">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 02 — EXECUTIVE SUMMARY</div>
+      <div class="slide-title">Five Key Conclusions</div>
+      <div class="slide-core">"From Power Leader to AI Infrastructure Platform — Structural Growth Story"</div>
+      <div class="slide-insights">
+        <li>5 KPI Cards: Profit 25.4B NTD | AI Revenue 35% | HVDC 800V | EPS CAGR 68% | Rating Overweight</li>
+        <li>Chart: 5-card bento layout — each card with tag / big number / unit / sub / note</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P03 -->
+  <div class="slide-card">
+    <img src="v5_page-03.png" alt="AI Market Trends">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 03 — AI MARKET TRENDS</div>
+      <div class="slide-title">Rack Power Density Inflection</div>
+      <div class="slide-core">"GPU TDP 150W → 1,000W+ | Rack 10kW → 130kW | Liquid Cooling 5% → 70%"</div>
+      <div class="slide-insights">
+        <li>Chart: Rack power density timeline (2018–2028E) with GPU TDP bars + liquid cooling % line</li>
+        <li>3 callout stats: 1,000W+ GPU TDP | 130kW NVL72 | $12.8B TAM</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P04 -->
+  <div class="slide-card">
+    <img src="v5_page-04.png" alt="Delta Transformation">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 04 — DELTA TRANSFORMATION</div>
+      <div class="slide-title">Power → AI Infrastructure Platform</div>
+      <div class="slide-core">"PSU + Liquid Cooling + BMS + EMS + Networking = Full AI Stack"</div>
+      <div class="slide-insights">
+        <li>Chart: Revenue mix shift (FY2022 → FY2025E) + Delta AI Platform illustration (6 modules)</li>
+        <li>AI power + cooling: &lt;15% (2022) → 40%+ (2025E)</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P05 -->
+  <div class="slide-card">
+    <img src="v5_page-05.png" alt="HVDC Architecture">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 05 — HVDC ARCHITECTURE</div>
+      <div class="slide-title">800V / 1MW+ Rack Power System</div>
+      <div class="slide-core">"400V AC → 800V HVDC → Native AI Rack Integration"</div>
+      <div class="slide-insights">
+        <li>Chart: 4-stage HVDC flow diagram (AC Input → Rectifier → 800V Bus → Rack PDU)</li>
+        <li>Key specs: 800V | 1MW+ per rack | 96%+ efficiency | IEC 61803 compliant</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P06 -->
+  <div class="slide-card">
+    <img src="v5_page-06.png" alt="Portfolio">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 06 — PRODUCT PORTFOLIO</div>
+      <div class="slide-title">Revenue Mix &amp; High-Margin Sources</div>
+      <div class="slide-core">"Component → Module → System → Solution | Margin 25% → 40%+"</div>
+      <div class="slide-insights">
+        <li>Chart: 4-segment horizontal bars (PSU 35% | Cooling 25% | BBU 20% | Networking 20%)</li>
+        <li>Right panel: 4 margin cards — Liquid Cooling 40%+ | AI PSU 35% | BBU 30% | AMC Service</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P07 -->
+  <div class="slide-card">
+    <img src="v5_page-07.png" alt="Financial">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 07 — FINANCIAL PROJECTIONS</div>
+      <div class="slide-title">EPS CAGR 68% / Margin Expansion to 40%</div>
+      <div class="slide-core">"FY2024 → FY2028E: Revenue Scale + Margin Expansion = Structural Uplift"</div>
+      <div class="slide-insights">
+        <li>Chart: EPS bar chart (6.2 → 12.5 NTD) with 68% CAGR annotation</li>
+        <li>Dual axis: Gross margin % bars + Revenue index line (FY2024=100 → FY2028=195)</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P08 -->
+  <div class="slide-card">
+    <img src="v5_page-08.png" alt="Competitive">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 08 — COMPETITIVE ADVANTAGES</div>
+      <div class="slide-title">Delta vs. Global Players</div>
+      <div class="slide-core">"HVDC + NVIDIA Partnership + AI Cooling = Structural Moat"</div>
+      <div class="slide-insights">
+        <li>Radar chart: Delta vs. Schneider/Vertiv vs. China competitors across 6 dimensions</li>
+        <li>Delta leads in: HVDC Tech, AI Cooling, Scale | Competes on NVIDIA partnership</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P09 -->
+  <div class="slide-card">
+    <img src="v5_page-09.png" alt="Risk">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 09 — RISK ASSESSMENT</div>
+      <div class="slide-title">High Impact / High Urgency Matrix</div>
+      <div class="slide-core">"AI Cycle | Customer Concentration | China Competition"</div>
+      <div class="slide-insights">
+        <li>3x3 Heatmap: 6 risks plotted by Impact × Urgency</li>
+        <li>HIGH: AI Capex Cycle | Customer Concentration | China Competition</li>
+      </div>
+    </div>
+  </div>
+
+  <!-- P10 -->
+  <div class="slide-card">
+    <img src="v5_page-10.png" alt="Roadmap">
+    <div class="slide-meta">
+      <div class="slide-num">PAGE 10 — STRATEGIC ROADMAP</div>
+      <div class="slide-title">Component → System → Solution</div>
+      <div class="slide-core">"Build/Partner/Acquire Decision in 90 Days | Tier-1 Joint Validation by 12 Months"</div>
+      <div class="slide-insights">
+        <li>4-lane roadmap: Technology | Customer | Product | Business Model</li>
+        <li>4 phases: 0–3M | 3–6M | 6–12M | 12–18M | ⚠ KEY DECISION box at bottom</li>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mindmap-section">
+  <h2>One-Page Architecture Mindmap (Bonus)</h2>
+  <img src="v5_page-11.png" alt="Mindmap">
+  <p style="font-size:11px; color:#6B7280; margin-top:8px;">AI Data Center Power &amp; Cooling — Full Architecture Map: GPU/AI Chip → Rack Level → HVDC Bus → Liquid Cooling → TMSBU → Delta Power → Summary</p>
+</div>
+
+<div class="footer">
+  Delta Electronics — TMSBU — AI Data Center Power &amp; Cooling — V5 Executive Presentation — May 5, 2026 — CONFIDENTIAL<br>
+  Sources: Delta IR, Morgan Stanley, TrendForce, IDC, NVIDIA HGX Specs — TMSBU Analysis
+</div>
+</body>
+</html>
