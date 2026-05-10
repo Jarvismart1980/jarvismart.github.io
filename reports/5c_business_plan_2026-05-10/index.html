@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5C 架構商業計劃 — SERVER &amp; Power Rack 水冷板 | Delta TMSBU 2026-05-10</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, "PingFang TC", "Microsoft JhengHei", sans-serif; background: #F7F9FC; color: #1A1A2E; }
+.header { background: #005EB8; color: #fff; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.header h1 { font-size: 22px; font-weight: bold; }
+.header-meta { font-size: 13px; opacity: 0.85; }
+.downloads { display: flex; gap: 12px; }
+.downloads a { background: rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 7px 16px; border-radius: 4px; font-size: 13px; border: 1px solid rgba(255,255,255,0.4); transition: background 0.2s; }
+.downloads a:hover { background: rgba(255,255,255,0.35); }
+.exec-summary { background: #005EB8; color: #fff; padding: 24px 32px; }
+.exec-summary h2 { font-size: 15px; opacity: 0.75; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.exec-summary p { font-size: 15px; line-height: 1.6; max-width: 900px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 28px 24px; }
+.slides-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.slides-nav button { background: #fff; border: 1.5px solid #E8E8E8; color: #005EB8; font-size: 13px; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.15s; }
+.slides-nav button:hover { border-color: #005EB8; }
+.slides-nav button.active { background: #005EB8; color: #fff; border-color: #005EB8; }
+.slide-viewer { background: #fff; border-radius: 8px; box-shadow: 0 2px 16px rgba(0,0,0,0.1); overflow: hidden; }
+.slide-viewer img { width: 100%; display: block; }
+.slide-footer { background: #005EB8; color: #fff; padding: 12px 20px; font-size: 13px; font-weight: bold; }
+.page-label { font-size: 12px; opacity: 0.7; margin-right: 12px; }
+.qa-section { margin-top: 32px; background: #fff; border-radius: 8px; box-shadow: 0 1px 8px rgba(0,0,0,0.08); padding: 24px 28px; }
+.qa-section h3 { font-size: 16px; color: #005EB8; margin-bottom: 16px; border-bottom: 2px solid #E8E8E8; padding-bottom: 8px; }
+.qa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.qa-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.5; }
+.qa-item input[type="checkbox"] { margin-top: 2px; accent-color: #005EB8; }
+.qa-category { font-weight: bold; color: #005EB8; min-width: 120px; font-size: 12px; }
+.footer { text-align: center; padding: 24px; font-size: 11px; color: #9CA3AF; line-height: 1.6; }
+.footer span { color: #005EB8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>5C 架構商業計劃</h1>
+    <div class="header-meta">SERVER &amp; Power Rack 水冷板 — Delta Electronics TMSBU &nbsp;|&nbsp; 2026 年 5 月 10 日 &nbsp;|&nbsp; 機密文件</div>
+  </div>
+  <div class="downloads">
+    <a href="5C_Business_Plan_v1.pptx">📥 下載 PPTX</a>
+    <a href="5C_Business_Plan_v1.pdf">📥 下載 PDF</a>
+  </div>
+</div>
+
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <p>液冷破局時刻，5C 架構引領台達從零件供應商升級為系統整合者。市場功率密度每 2 年翻倍，液冷滲透率 2028 年將達 35%+，水冷板 TAM 達 US$ 18 億。台達 Cold Plate + CDU + Quick Connector + Monitoring 垂直整合，是最難被複製的競爭優勢。預估 3.5 年回本，18 週從驗證到量產。</p>
+</div>
+
+<div class="container">
+  <div class="slides-nav" id="nav"></div>
+  <div class="slide-viewer">
+    <img id="slideImg" src="5c_v1_page-01.jpg" alt="Slide 1">
+    <div class="slide-footer">
+      <span class="page-label" id="pageLabel">Page 1 / 10</span>
+      <span id="slideTag">液冷破局時刻，5C 架構引領台達從零件供應商升級為系統整合者</span>
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h3>QA Checklist — 產出前檢查</h3>
+    <div class="qa-grid">
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">數據標註</span> 所有數字已標註 Illustrative / Internal estimate</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">匿名化</span> 所有客戶名稱已匿名化（某大型 CSP）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">數據標註</span> PUE / TCO / ROI 假設已標註 Illustrative financial model</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">技術規格</span> Cold Plate 散熱能力（500W/cm² / 650W/cm²）待與 RD 確認</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">技術規格</span> Power rack 市場規模（US$ 18 億）待與 PM 確認</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">競品框架</span> 競品比較用 Delta Differentiators 框架，無攻擊性描述</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">版權</span> P1 封面已加 Confidential 標示</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">聯絡窗口</span> Page 10 CTA 聯絡窗口尚未填入實際資料（需補）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">仍需驗證</span> 液冷滲透率曲線（2024 <15% → 2028 35%）來源：Internal estimate，需外部資料佐證</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Delta Electronics TMSBU — 機密文件<br>
+  All financial figures are <span>illustrative</span>. All scenario specifications are <span>representative</span>.<br>
+  Copyright © 2026 Delta Electronics Inc. All rights reserved.
+</div>
+
+<script>
+const slides = [
+  { img: "5c_v1_page-01.jpg", label: "P1", tag: "液冷破局時刻，5C 架構引領台達從零件供應商升級為系統整合者" },
+  { img: "5c_v1_page-02.jpg", label: "P2", tag: "GPU TDP 每 2 年翻倍，液冷滲透率將加速攀升" },
+  { img: "5c_v1_page-03.jpg", label: "P3", tag: "氣冷架構在 AI 時代面臨四重極限，液冷已是唯一出路" },
+  { img: "5c_v1_page-04.jpg", label: "P4", tag: "5C 垂直整合是台達最難被複製的競爭優勢" },
+  { img: "5c_v1_page-05.jpg", label: "P5", tag: "台達 Cold Plate 從 1kW 到 100kW 全功率覆蓋，已具備量產能力" },
+  { img: "5c_v1_page-06.jpg", label: "P6", tag: "垂直整合是台達最難被複製的競爭優勢" },
+  { img: "5c_v1_page-07.jpg", label: "P7", tag: "真實案例驗證：液冷方案在多種場景下均已通過考驗" },
+  { img: "5c_v1_page-08.jpg", label: "P8", tag: "液冷 3.5 年回本，5 年創造更大價值，長期投資報酬明確" },
+  { img: "5c_v1_page-09.jpg", label: "P9", tag: "18 週從驗證到量產，清晰階段交付物確保客戶掌握進度" },
+  { img: "5c_v1_page-10.jpg", label: "P10", tag: "液冷破局時刻，現在開始攜手搶佔市場先機" },
+];
+const nav = document.getElementById("nav");
+const slideImg = document.getElementById("slideImg");
+const pageLabel = document.getElementById("pageLabel");
+const slideTag = document.getElementById("slideTag");
+
+slides.forEach((s, i) => {
+  const btn = document.createElement("button");
+  btn.textContent = s.label;
+  btn.className = i === 0 ? "active" : "";
+  btn.onclick = () => {
+    document.querySelectorAll(".slides-nav button").forEach(b => b.classList.remove("active"));
+    btn.className = "active";
+    slideImg.src = s.img;
+    pageLabel.textContent = `Page ${i + 1} / 10`;
+    slideTag.textContent = s.tag;
+  };
+  nav.appendChild(btn);
+});
+</script>
+</body>
+</html>
