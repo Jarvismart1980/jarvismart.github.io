@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Plate Engineering Platform | Delta TMSBU 2026-05-10</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, "PingFang TC", "Microsoft JhengHei", sans-serif; background: #F7F9FC; color: #1A1A2E; }
+.header { background: #005EB8; color: #fff; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.header h1 { font-size: 20px; font-weight: bold; }
+.header-meta { font-size: 12px; opacity: 0.85; }
+.downloads { display: flex; gap: 10px; }
+.downloads a { background: rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 4px; font-size: 12px; border: 1px solid rgba(255,255,255,0.4); transition: background 0.2s; }
+.downloads a:hover { background: rgba(255,255,255,0.35); }
+.exec-summary { background: #005EB8; color: #fff; padding: 20px 28px; }
+.exec-summary h2 { font-size: 13px; opacity: 0.75; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+.exec-summary p { font-size: 14px; line-height: 1.6; max-width: 900px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
+.slides-nav { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 22px; }
+.slides-nav button { background: #fff; border: 1.5px solid #E8E8E8; color: #005EB8; font-size: 12px; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.15s; }
+.slides-nav button:hover { border-color: #005EB8; }
+.slides-nav button.active { background: #005EB8; color: #fff; border-color: #005EB8; }
+.slide-viewer { background: #fff; border-radius: 8px; box-shadow: 0 2px 14px rgba(0,0,0,0.1); overflow: hidden; }
+.slide-viewer img { width: 100%; display: block; }
+.slide-footer { background: #005EB8; color: #fff; padding: 10px 18px; font-size: 12.5px; }
+.page-label { font-size: 11px; opacity: 0.7; margin-right: 12px; }
+.qa-section { margin-top: 28px; background: #fff; border-radius: 8px; box-shadow: 0 1px 8px rgba(0,0,0,0.08); padding: 22px 26px; }
+.qa-section h3 { font-size: 15px; color: #005EB8; margin-bottom: 14px; border-bottom: 2px solid #E8E8E8; padding-bottom: 7px; }
+.qa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.qa-item { display: flex; align-items: flex-start; gap: 9px; font-size: 12.5px; line-height: 1.5; }
+.qa-item input[type="checkbox"] { margin-top: 2px; accent-color: #005EB8; }
+.qa-category { font-weight: bold; color: #005EB8; min-width: 110px; font-size: 11px; }
+.footer { text-align: center; padding: 22px; font-size: 11px; color: #9CA3AF; line-height: 1.6; }
+.footer span { color: #005EB8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Server / Power Rack Cold Plate Engineering Platform</h1>
+    <div class="header-meta">Delta Electronics TMSBU &nbsp;|&nbsp; 2026 年 5 月 10 日 &nbsp;|&nbsp; 機密文件</div>
+  </div>
+  <div class="downloads">
+    <a href="ColdPlate_Engineering_Platform_v1.pptx">PPTX 下載</a>
+    <a href="ColdPlate_Engineering_Platform_v1.pdf">PDF 下載</a>
+  </div>
+</div>
+
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <p>建立可量產、可驗證、可模組化的 Rack-level Cold Plate Engineering Platform。三階段里程碑：Concept（0–2M）→ Prototype & Validation（3–6M）→ NPI / Pilot Build（7–12M）。目標 2027 上半年具備量產能力，支援 AI server rack 與 Power rack 高功率散熱需求。</p>
+</div>
+
+<div class="container">
+  <div class="slides-nav" id="nav"></div>
+  <div class="slide-viewer">
+    <img id="slideImg" src="cp_v1_page-01.jpg" alt="Slide 1">
+    <div class="slide-footer">
+      <span class="page-label" id="pageLabel">Page 1 / 12</span>
+      <span id="slideTag">Cold Plate Engineering Platform — 2026 技術開發藍圖</span>
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <h3>QA Checklist — 工程技術內容檢查</h3>
+    <div class="qa-grid">
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">目標值</span> 熱阻 < 0.05°C-in²/W（TBD，需與 RD 確認）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">目標值</span> 壓力損失 < 30kPa @ 15LPM（TBD，需與 CDU 確認）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">目標值</span> 熱疲勞 5,000 cycles（TBD，需驗證是否足夠）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">目標值</span> MTBF > 40,000h（TBD，需與 Quality 確認）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">CSP 規格</span> 洩漏測試標準需建立 CSP 對照表（TBD）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">水質</span> 水質腐蝕測試標準尚未建立（TBD）</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">資源</span> Phase 1–3 團隊規模與 tooling 預算需與主管確認</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">介面</span> Quick disconnect 介面標準需與 CSP 確認</div>
+      <div class="qa-item"><input type="checkbox"> <span class="qa-category">驗證</span> 所有標示 TBD 的參數需在 Phase 1 完成確認</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Delta Electronics TMSBU — 機密文件<br>
+  Engineering target values marked (TBD) require RD/PM/CSP confirmation before finalization.<br>
+  Copyright © 2026 Delta Electronics Inc. All rights reserved.
+</div>
+
+<script>
+const slides = [
+  { img: "cp_v1_page-01.jpg", label: "P1", tag: "Cold Plate Engineering Platform — 2026 技術開發藍圖" },
+  { img: "cp_v1_page-02.jpg", label: "P2", tag: "熱、流體、機械、可靠四維度目標必須同步追蹤，缺一不可" },
+  { img: "cp_v1_page-03.jpg", label: "P3", tag: "四層熱源分類是 Cold Plate 產品線架構的基礎" },
+  { img: "cp_v1_page-04.jpg", label: "P4", tag: "Cold Plate 是熱傳路徑的瓶頸節點，需從系統層面優化" },
+  { img: "cp_v1_page-05.jpg", label: "P5", tag: "流道幾何沒有最佳解，只有最適解 — 需依熱密度、壓降、量產三維度評估" },
+  { img: "cp_v1_page-06.jpg", label: "P6", tag: "四類參數同步追蹤，是 Cold Plate 從設計到量產的品質把關核心" },
+  { img: "cp_v1_page-07.jpg", label: "P7", tag: "材料 + 製程聯合選擇決定性能上限與量產成本，需在 Concept 階段早期確認" },
+  { img: "cp_v1_page-08.jpg", label: "P8", tag: "漏液風險需從架構層面管理，而非只靠單一密封技術" },
+  { img: "cp_v1_page-09.jpg", label: "P9", tag: "標準化驗證流程是 Cold Plate Engineering Platform 的核心模組" },
+  { img: "cp_v1_page-10.jpg", label: "P10", tag: "四類測試缺一不可，測試矩陣需與客戶規格和系統需求同步更新" },
+  { img: "cp_v1_page-11.jpg", label: "P11", tag: "風險管理是持續性活動，需要跨團隊 Visibility" },
+  { img: "cp_v1_page-12.jpg", label: "P12", tag: "12 個月三階段，建立 Cold Plate Engineering Platform，目標 2027 上半年具備量產能力" },
+];
+const nav = document.getElementById("nav");
+const slideImg = document.getElementById("slideImg");
+const pageLabel = document.getElementById("pageLabel");
+const slideTag = document.getElementById("slideTag");
+
+slides.forEach((s, i) => {
+  const btn = document.createElement("button");
+  btn.textContent = s.label;
+  btn.className = i === 0 ? "active" : "";
+  btn.onclick = () => {
+    document.querySelectorAll(".slides-nav button").forEach(b => b.classList.remove("active"));
+    btn.className = "active";
+    slideImg.src = s.img;
+    pageLabel.textContent = `Page ${i + 1} / 12`;
+    slideTag.textContent = s.tag;
+  };
+  nav.appendChild(btn);
+});
+</script>
+</body>
+</html>
